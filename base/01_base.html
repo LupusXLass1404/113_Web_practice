@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 基本設定</title>
+    <!-- 第二種方式：使用 link，適合用於開發網站-->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- 第一種方式：使用 style 標籤樣式，該文件的專屬樣式 -->
+    <style>
+        /* 標籤選擇器 */
+        h1 {
+            color: brown;
+            background: beige;
+        }
+
+        p {
+            /* color: blanchedalmond; */
+            font-size: 18px;
+        }
+
+        /* 群組選擇器 */
+        /* h1的顏色會被覆蓋 */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- emmet: (h1{title$}+p)*3 -->
+    <!-- 第三種方式：行內樣式(inline style)，標籤的專屬樣式，優先等級最高-->
+    <h1 style="color: deeppink;">title1</h1>
+    <!-- lorem 假字 -->
+
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus harum, aperiam consequatur accusamus id unde
+        adipisci amet molestias magni deserunt quos dolorum laboriosam sequi ad beatae consectetur. Numquam, optio
+        tempora.</p>
+
+    <h1>title2</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias dolorem officiis nostrum, ipsa, omnis
+        laudantium
+        iusto sed at eius et veritatis quas quibusdam odit, a quae ea unde modi excepturi.</p>
+
+    <h1>title3</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias dolor magnam ipsa recusandae architecto
+        laudantium officia, error molestiae eaque. Cumque perferendis quam tempore aliquid assumenda et rerum
+        inventore
+        culpa. Architecto!</p>
+    <hr>
+
+    <!-- emmet: h${Hello World}*6 -->
+    <h1>Hello World</h1>
+    <h2>Hello World</h2>
+    <h3>Hello World</h3>
+    <h4>Hello World</h4>
+    <h5>Hello World</h5>
+    <h6>Hello World</h6>
+
+</body>
+
+</html>

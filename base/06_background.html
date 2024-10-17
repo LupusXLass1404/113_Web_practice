@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        /* background-image: url("https://picsum.photos/1920/1080/?random=10"); */
+        background-attachment: fixed;
+    }
+
+    .attachement {
+        width: 600px;
+        height: 600px;
+        margin: 50px auto;
+        border: 5px solid #333;
+        background-image: url("https://picsum.photos/1920/1080/?random=10");
+        background-attachment: fixed;
+    }
+
+    .box {
+        /* 盒模型 */
+        width: 600px;
+        height: 600px;
+        border: 5px solid #eee;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        margin: auto;
+
+        /* 文字 */
+        font-size: 3rem;
+        color: darkslateblue;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .bg-color {
+        background-color: #faa;
+        /* 縮寫 */
+        /* background: red; */
+    }
+
+    .bg-img {
+        background-image: url("https://picsum.photos/100/100/?random=10");
+    }
+
+    .bg-repeat-x {
+        background-repeat: repeat-x;
+    }
+
+    .bg-repeat-y {
+        background-repeat: repeat-y;
+    }
+
+    .bg-no-repeat {
+        background-repeat: no-repeat;
+    }
+
+    .bg-position {
+        /* 雙值 => 第一個是水平，第二個是垂直 */
+        /* left、center、right <=> 0% 50% 100% */
+        /* top、center、bottom <=> 0% 50% 100% */
+        background-position: center center;
+        background-position: 100px 100px;
+    }
+
+    .bg-size {
+        background-image: url("https://picsum.photos/300/200/?random=10");
+        background-repeat: no-repeat;
+        /* 關鍵字：contain、cover */
+        /* 等比例放大直到邊邊 */
+        background-size: contain;
+        /* 填滿 */
+        background-size: cover;
+    }
+
+    .bg-abbr {
+        /* background: color image reoeat position / size; */
+        /* background-position 跟 background-size 中間一定要 / */
+        background: #faa url("https://picsum.photos/300/200/?random=10") no-repeat -390px -390px / 1000px;
+    }
+
+    /* 
+    background-color
+    background-image
+    background-repeat
+    background-position
+    background-size
+    */
+
+    /* 
+    box-model；了解 inline、inline-block、block 的差異
+    flexbox 應用
+    @media query RWD
+    */
+</style>
+
+<body>
+    <div class="attachement"></div>
+    <div class="attachement"></div>
+
+    <div class="box bg-color">Lorem ipsum dolor sit amet consectetur.</div>
+    <div class="box bg-img">Lorem ipsum dolor sit amet consectetur.</div>
+    <!-- .box.bg-img.bg-repeat-x -->
+    <div class="box bg-img bg-repeat-x">background-repeat-x</div>
+    <div class="box bg-img bg-repeat-y">background-repeat-y</div>
+    <div class="box bg-img bg-no-repeat">background-no-repeat</div>
+    <div class="box bg-img bg-no-repeat bg-position">background-position</div>
+    <div class="box bg-size">background-size</div>
+    <div class="box bg-abbr">縮寫</div>
+
+    <!-- stuName 學生名字 -->
+
+</body>
+
+</html>

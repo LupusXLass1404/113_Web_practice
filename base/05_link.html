@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 繼承瀏覽器高度 */
+        html,
+        body {
+            height: 100%;
+        }
+
+        /* 另一種寫法 body { height: 100vh;} */
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* : 偽類 pseudo-class，是一個大家族 */
+        /* :link 要有 href 才會有樣式 */
+        /* :link 是一個狀態，有連結 href 的狀態 */
+        a:link {
+            color: red;
+            font-size: 100px;
+            text-decoration: none;
+            /* 轉場動畫 */
+            transition: 1s;
+        }
+
+        /* :visited 拜訪過後的狀態 */
+        a:visited {
+            color: deepskyblue;
+
+        }
+
+        /* :hover 滑鼠移過去的狀態 */
+        a:hover {
+            color: deeppink;
+            background: lightpink;
+            text-decoration: none;
+
+        }
+
+        /* :active 點擊時的狀態 */
+        a:active {
+            color: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">Google</a>
+
+</body>
+
+</html>

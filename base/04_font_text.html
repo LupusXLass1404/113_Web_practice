@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 設定 google font 的 link -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Sketch&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+
+    <style>
+        :root {
+            font-size: 20px;
+        }
+
+        body {
+            /* font-family: "Londrina Sketch", sans-serif; */
+            padding: 24px;
+        }
+
+        h2 {
+            font-size: 3em;
+        }
+
+        .font-style {
+            /* 單位可以是 px、rem、em... */
+            font-size: 30px;
+            /* 斜體 */
+            font-style: italic;
+            /* 粗體 */
+            font-weight: bolder;
+            /* 字型家族 */
+            /* 如果使用者的系統有第一個字型就使用，沒有就用第二個 Verdana... */
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .google-font {
+            font-size: 32px;
+            font-family: "Sixtyfour Convergence", sans-serif;
+        }
+
+        .text-style {
+            font-size: 32px;
+            text-align: left;
+            /* 裝飾。底線underline、頂線overline、刪除線line-through、none */
+            text-decoration: underline;
+            /* 第一行文字的縮排 */
+            text-indent: 100px;
+            /* 英文字母與中文字之間的間隔 */
+            letter-spacing: 5px;
+            /* 英文單字之間的間隔，中文字比較難用到這個屬性（中文字沒有空格） */
+            word-spacing: 20px;
+            /* 行高，可以設定單位值 */
+            line-height: 50px;
+            /* 也可以設定倍數（無單位） */
+            line-height: 2;
+        }
+
+        .text-shadow {
+            font-size: 100px;
+            /* 一、水平位移（+為右，-為左）；二、垂直位移（+為下，-為上）；三、模糊半徑；四、顏色 */
+            /* text-shadow: 0px -258px 5px rgba(94, 0, 0, 0.5); */
+            text-shadow: 0px -258px 5px rgba(94, 0, 0, 0.5),
+                -20px -20px 5px rgba(94, 0, 0, 0.5);
+        }
+
+        /* CSS generator 產生器，可以先在產生器知道外觀長什麼樣，看了舒服就貼上 */
+    </style>
+</head>
+
+<body>
+
+    <h2>1.Font 樣式設定</h2>
+    <div class="font-style">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi vitae, asperiores facere
+        eveniet aliquid ullam dolorum a, impedit voluptatibus dicta nesciunt dolorem consequuntur voluptates vero nemo.
+        Accusamus soluta blanditiis officia.</div>
+
+    <h2>2.Google Font</h2>
+    <div class="google-font">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique a soluta ipsa
+        deserunt
+        nostrum unde quis odio eum expedita, cumque repudiandae doloremque exercitationem, quaerat natus assumenda totam
+        cupiditate modi. Beatae?</div>
+
+    <h2>3.Text 樣式設定</h2>
+    <p class="text-style">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, numquam id? Suscipit nulla
+        aperiam dolores omnis
+        hic excepturi similique libero odio sequi nam unde voluptates fugit, deserunt ipsam eligendi necessitatibus!</p>
+
+    <h2>4.文字陰影</h2>
+    <p class="text-shadow">PHP is the best!</p>
+
+    <h2>5.rem 與 em 的差異</h2>
+
+    <h3>rem</h3>
+    <p>為 root 預設 font-size 的倍數，預設為 16px</p>
+    <p>:root 選擇器，指的是根元素html</p>
+    <div style="font-size:1rem;">
+        font
+        <div style="font-size:2rem;">
+            font
+            <div style="font-size:3rem;">font</div>
+        </div>
+    </div>
+
+    <h3>em</h3>
+    <p>可能為父層或祖先層 font-size 倍數。</p>
+    <p>父層若有設定文字尺寸以它為準，沒有將繼續往外找</p>
+    <div style="font-size:1em;">
+        font
+        <div style="font-size:2em;">
+            font
+            <div style="font-size:3em;">font</div>
+        </div>
+    </div>
+
+</body>
+
+</html>
