@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+        /* 
+        float 會自動把標籤變成 display: block
+        會浮起來，文字會繞過去，像Word的文繞圖。
+        float 的元素不會被計入高度。
+        */
+
+        .left {
+            float: left;
+        }
+
+        .right {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box left"></div>
+    <span class="left" style="width: 50px;">私人夫妻，好了發佈。</span>
+    <div class="box left"></div>
+    <div class="box right"></div>
+
+    <!-- 如果不想用文繞圖可以用 clear 清除 float 浮動 -->
+    <p style="clear: both;">float 容器內的 clear 文字</p>
+    <p>到達共享理解眼裡深入無線相信有關部門實際貢獻，系統版面看看新技術世界上溫暖不限關西產業環境，傷心貨幣課堂聯繫填寫，投入已經不論書庫一下子說是有很多人間集中郵箱，類別返回機會分類求購女孩子權限進步呼吸在這裡，相互她是有時候配套溝通會議付出行為各類，究竟這個。
+    </p>
+    <!-- 在漂浮的外層容器加上 overflow: hidden 可以讓漂浮元素被算入高度 -->
+    <div style="overflow: hidden;">
+        <div class="box left"></div>
+        <div class="box left"></div>
+        <div class="box left"></div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            /* 調整資料走向 */
+            /* direction: rtl; */
+            /* background-image: url("https://picsum.photos/300/200/?random=10"); */
+            background-size: cover;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            box-sizing: border-box;
+            /* background-color: palevioletred; */
+            display: inline-block;
+
+        }
+
+        .relative {
+            /* 
+                top、left、right、bottom 距離原本位置偏移
+                top、bottom 同時設定時，以top為主
+                left、right 同時設定時，以資料走向為主
+                45 
+            */
+            top: 200px;
+            background-color: skyblue;
+            /* relative 相對於原本位置偏移 */
+            position: relative;
+        }
+
+        .absolute-out {
+            width: 50%;
+            height: 50vh;
+            backdrop-filter: blur(2px);
+            background-color: rgba(200, 100, 100, 0.5);
+            position: relative;
+
+        }
+
+        .absolute-in {
+            /* absolute 相對於上層 relative 位置偏移，都沒有就是 body */
+            position: absolute;
+            /* 有寬高時，遷移方式和 relative 相同 */
+            /* 如果元素沒有寬高時，可以利用 top、bottom'right、left 拉伸元素 */
+            top: 50px;
+            background-color: darkslateblue;
+        }
+
+        .fixed {
+            /* fixed 相對於瀏覽器視窗的位置 */
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: pink;
+        }
+
+        .sticky {
+            position: sticky;
+            background: green;
+            top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="relative">ralative</div>
+    <div class="absolute-out">
+        absolute-out
+        <div class="absolute-in">absolute-in</div>
+    </div>
+    <div class="fixed">fixed</div>
+    <div class="sticky">sticky</div>
+</body>
+
+</html>

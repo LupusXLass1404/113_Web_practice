@@ -81,6 +81,13 @@
             padding: 16px;
             font-size: 20px;
         }
+
+        #lyric {
+            white-space: pre-line;
+            padding: 0px 48px;
+        }
+
+        .button {}
     </style>
 </head>
 
@@ -88,57 +95,98 @@
     <table>
         <tr>
             <td colspan="2" style="padding: 0px 48px;">
-                <div id="header">
-                    <button id="change1" class="button">萬千花蕊慈母悲哀</button>
-                    <button id="change2" class="button">葬予規路火烌猶在</button>
-                </div>
+                <div id="header"></div>
             </td>
         </tr>
         <tr>
             <td style="text-align: center;">
-                <span class="song1">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/kkUWlcjmOew?si=J3QwLrTyHEV8x4Xd"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </span>
-                <span class="song2">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/KSq5wxw9-9Q?si=fst6umFpM_5azbSx"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </span>
+                <iframe id="youtube" width="560" height="315" src="" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </td>
             <td style="width: 50%;">
-                <span class="song1">
-                    <h1>萬千花蕊慈母悲哀</h1>
-                    <h2>
-                        <a href="https://www.kkbox.com/tw/tc/artist/0p7Arw-CBBMNitee75">
-                            <img src="https://i.kfs.io/artist/global/35047450,0v3/fit/160x160.jpg" alt=""
-                                style="width: 40px; border-radius: 100%;">
-                            珂拉琪 Collage
-                        </a>
-                    </h2>
-                    作詞：王家權&nbsp&nbsp&nbsp&nbsp作曲：王家權<br>
-                    編曲：珂拉琪
-                </span>
-                <span class="song2">
-                    <h1>葬予規路火烌猶在</h1>
-                    <h2>
-                        <a href="https://www.kkbox.com/tw/tc/artist/0p7Arw-CBBMNitee75">
-                            <img src="https://i.kfs.io/artist/global/35047450,0v3/fit/160x160.jpg" alt=""
-                                style="width: 40px; border-radius: 100%;">
-                            珂拉琪 Collage
-                        </a>
-                    </h2>
-                    作詞：王家權&nbsp&nbsp&nbsp&nbsp作曲：王家權<br>
-                    編曲：珂拉琪
-                </span>
+                <h1 id="title"></h1>
+                <h2>
+                    <a href="https://www.kkbox.com/tw/tc/artist/0p7Arw-CBBMNitee75">
+                        <img src="https://i.kfs.io/artist/global/35047450,0v3/fit/160x160.jpg" alt=""
+                            style="width: 40px; border-radius: 100%;">
+                        珂拉琪 Collage
+                    </a>
+                </h2>
+                作詞：<span id="lyricist"></span>&nbsp&nbsp&nbsp&nbsp作曲：<span id="composer"></span><br>
+                編曲：<span id="arranger"></span>
             </td>
         </tr>
         <tr>
-            <td class="ly" colspan="2" style="white-space: pre-line; padding: 0px 48px;">
-                <span class="song1">
+            <td id="lyric" colspan="2">
+
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding: 0;">
+                <h2>聽更多 珂拉琪 Collage 的歌曲</h2>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding: 0;">
+                <div class="otherContent">
+                    <div class="otherLink">
+                        <a href="https://www.youtube.com/watch?v=5h_mxY1At7E">
+                            <img src="https://i.ytimg.com/vi/5h_mxY1At7E/maxresdefault.jpg" alt="">
+                            <p>這該死的拘執與愛</p>
+                        </a>
+
+                    </div>
+                    <div class="otherLink">
+                        <a href="https://www.youtube.com/watch?v=KSq5wxw9-9Q">
+                            <img src="https://i.ytimg.com/vi/KSq5wxw9-9Q/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA22C8FjYfI_SIHV6zPQmXCUPVLTA"
+                                alt="">
+                            <p>葬予規路火烌猶在</p>
+                        </a>
+
+                    </div>
+                    <div class="otherLink">
+                        <a href="https://www.youtube.com/watch?v=g4mQmLZ-lEw">
+                            <img src="https://i.ytimg.com/vi/g4mQmLZ-lEw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCKUXWP-GZ_Dk0nEbDZmk4O-Rxi6g"
+                                alt="">
+                            <p>蓮花空行身染愛</p>
+                        </a>
+                    </div>
+                    <div class="otherLink">
+                        <a href="https://www.youtube.com/watch?v=5vyT2qDmFhE">
+                            <img src="https://i.ytimg.com/vi/5vyT2qDmFhE/maxresdefault.jpg" alt="">
+                            <p>傷心地獄芳花引魂</p>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        let song = {
+            萬千花蕊慈母悲哀: {
+                lyricist: "王家權",
+                composer: "王家權",
+                arranger: "珂拉琪",
+                youtube: "https://www.youtube.com/embed/kkUWlcjmOew?si=J3QwLrTyHEV8x4Xd",
+            },
+            葬予規路火烌猶在: {
+                lyricist: "王家權",
+                composer: "王家權",
+                arranger: "珂拉琪",
+                youtube: "https://www.youtube.com/embed/KSq5wxw9-9Q?si=fst6umFpM_5azbSx",
+            },
+            這該死的拘執佮愛: {
+                lyricist: "王家權",
+                composer: "王家權",
+                arranger: "珂拉琪",
+                youtube: "https://www.youtube.com/embed/5h_mxY1At7E?si=kcpaSTqWsavVGmzr",
+            },
+        };
+        console.log(song)
+
+        let lyrics = {
+            萬千花蕊慈母悲哀: `
                     下晡 一个人踮厝內
                     西北雨 沃澹窗外的衫
                     外口的人 猶未轉來
@@ -203,8 +251,8 @@
                     雨 微微仔落
                     天 微微仔光
                     看你 微微仔笑
-                    後世人再會
-                </span><span class="song2">
+                    後世人再會`,
+            葬予規路火烌猶在: `
                     揣我的身軀
                     行入你的夢中
                     用我的雙跤
@@ -266,91 +314,93 @@
                     心也茫茫 無清醒的夢
                     逐家家財萬貫 我的
                     心也茫茫 無清醒的夢
-                    逐家一生平安 轉來
-                </span>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" style="padding: 0;">
-                <h2>聽更多 珂拉琪 Collage 的歌曲</h2>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" style="padding: 0;">
-                <div class="otherContent">
-                    <div class="otherLink">
-                        <a href="https://www.youtube.com/watch?v=5h_mxY1At7E">
-                            <img src="https://i.ytimg.com/vi/5h_mxY1At7E/maxresdefault.jpg" alt="">
-                            <p>這該死的拘執與愛</p>
-                        </a>
+                    逐家一生平安 轉來`,
+            這該死的拘執佮愛: `
+                    你的心 親像花
+                    無人應 隨蔫去
+                    你愛的人 誠固執
+                    予伊的夢 伊提袂起
 
-                    </div>
-                    <div class="otherLink">
-                        <a href="https://www.youtube.com/watch?v=KSq5wxw9-9Q">
-                            <img src="https://i.ytimg.com/vi/KSq5wxw9-9Q/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA22C8FjYfI_SIHV6zPQmXCUPVLTA"
-                                alt="">
-                            <p>葬予規路火烌猶在</p>
-                        </a>
+                    你是一个 如此溫柔的人
+                    你應該 愛你值得愛的人
+                    但是 頭前有我欲行的路
+                    毋知你敢會了解
 
-                    </div>
-                    <div class="otherLink">
-                        <a href="https://www.youtube.com/watch?v=g4mQmLZ-lEw">
-                            <img src="https://i.ytimg.com/vi/g4mQmLZ-lEw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCKUXWP-GZ_Dk0nEbDZmk4O-Rxi6g"
-                                alt="">
-                            <p>蓮花空行身染愛</p>
-                        </a>
-                    </div>
-                    <div class="otherLink">
-                        <a href="https://www.youtube.com/watch?v=5vyT2qDmFhE">
-                            <img src="https://i.ytimg.com/vi/5vyT2qDmFhE/maxresdefault.jpg" alt="">
-                            <p>傷心地獄芳花引魂</p>
-                    </div>
-                </div>
-            </td>
-        </tr>
-    </table>
+                    是按怎拆開你的
+                    心肝內底
+                    會看著 暗淡的愛流成水
+                    當我越頭離開時
+                    心內亂雨紛飛
 
-    <script>
-        let song1_class = document.querySelectorAll('.song1')
-        let song2_class = document.querySelectorAll('.song2')
+                    因為你 的眼神
+                    戇戇咧望 真毋願
+
+                    若是你 會當看著
+                    (亻因)佇咧彼搭
+                    咱就會使
+                    做伙搝彼陣落水的人
+                    伊寫的彼條歌
+                    是拆破生死的紙
+                    敢講你 真正攏無感覺
+                    攏無感覺
+
+                    是按怎拆開你的
+                    心肝內底
+                    會看著 暗淡的愛流成血
+                    當我無閣咧注神
+                    磕袂著就想著你
+
+                    但是你 的眼神
+                    無彩工 準拄煞
+
+                    若是你 會當看著
+                    (亻因)佇咧彼搭
+                    咱就會使
+                    做伙搝彼陣落水的人
+                    伊寫的彼條歌
+                    是拆破生死的紙
+                    敢講你 真正攏無感覺
+                    攏無感覺
+
+                    （猛獸亂使 侵門踏戶）
+                    （厝邊頭尾 寸草無生）
+                    （猛獸亂使 侵門踏戶）
+                    （厝邊頭尾 寸草無生）
+                    `,
+        }
+
+
+        into();
+
+        function into() {
+            Object.entries(song).forEach(([songName, value]) => {
+                document.getElementById('header').innerHTML += `<button class="button" data-song="${songName}">${songName}</button>`;
+            });
+            songSwitch("萬千花蕊慈母悲哀");
+        };
+
         let button_class = document.querySelectorAll('.button')
-
-        function song1show() {
-            song1_class.forEach(ele => {
-                ele.style.display = 'block';
-            })
-        }
-        function song1hide() {
-            song1_class.forEach(ele => {
-                ele.style.display = 'none';
-            })
-        }
-        function song2show() {
-            song2_class.forEach(ele => {
-                ele.style.display = 'block';
-            })
-        }
-        function song2hide() {
-            song2_class.forEach(ele => {
-                ele.style.display = 'none';
-            })
-        }
-
-        document.getElementById('change1').onclick = function () {
-            song1show();
-            song2hide();
-        };
-        document.getElementById('change2').onclick = function () {
-            song2show();
-            song1hide();
-        };
-
-
         button_class.forEach(function (button) {
             button.onclick = function () {
-                console.log(this.id);
+                console.log(this.dataset.song);
+                songSwitch(this.dataset.song)
             };
         });
+
+
+        function songSwitch(songId) {
+            document.getElementById('title').innerHTML = songId;
+            document.getElementById('lyric').innerHTML = lyrics[songId];
+            Object.entries(song[songId]).forEach(([key, value]) => {
+                if (key == 'youtube') {
+                    document.getElementById(key).src = value;
+                } else {
+                    document.getElementById(key).innerHTML = value;
+                };
+            });
+        };
+
+
     </script>
 
 </body>

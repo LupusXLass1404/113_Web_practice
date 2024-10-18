@@ -34,16 +34,27 @@
             text-decoration: overline underline;
         }
 
-        .va-top {
-            vertical-align: top;
+        .inline-block {
+            width: 100px;
+            height: 100px;
+            background: pink;
+            /* 
+                display 修改元素的顯示方式 
+                none: 不顯示
+                inline-block: 外在排列和 inline 相同，內部排列和 block 相同
+                
+                inline-block一定會跟別的inline-block貼在一起，4px。其實是縮排和空格造成的空白
+
+                margin-left: -4px; 可以消除
+            */
+
+            display: inline-block;
+            text-align: center;
         }
 
-        .va-middle {
-            vertical-align: middle;
-        }
-
-        .va-bottom {
-            vertical-align: bottom;
+        .inline-block:not(:first-child) {
+            margin-left: -4px;
+            background: blanchedalmond;
         }
     </style>
 </head>
@@ -53,6 +64,13 @@
         <span class="">AAga</span>
         <img src="https://picsum.photos/16/16/?random=10">
     </p>
+    <hr>
+    <div>
+        <div class="inline-block">inline-block</div>
+        <div class="inline-block">inline-block</div>
+        <div class="inline-block">inline-block</div>
+    </div>
+
 </body>
 
 </html>
