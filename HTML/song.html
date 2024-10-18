@@ -89,8 +89,8 @@
         <tr>
             <td colspan="2" style="padding: 0px 48px;">
                 <div id="header">
-                    <button id="change1">萬千花蕊慈母悲哀</button>
-                    <button id="change2">葬予規路火烌猶在</button>
+                    <button id="change1" class="button">萬千花蕊慈母悲哀</button>
+                    <button id="change2" class="button">葬予規路火烌猶在</button>
                 </div>
             </td>
         </tr>
@@ -313,6 +313,7 @@
     <script>
         let song1_class = document.querySelectorAll('.song1')
         let song2_class = document.querySelectorAll('.song2')
+        let button_class = document.querySelectorAll('.button')
 
         function song1show() {
             song1_class.forEach(ele => {
@@ -343,6 +344,13 @@
             song2show();
             song1hide();
         };
+
+
+        button_class.forEach(function (button) {
+            button.onclick = function () {
+                console.log(this.id);
+            };
+        });
     </script>
 
 </body>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            /* text-align 控制「區塊內」元素的位置 */
+            /* 區塊、表格內的內容對齊。針對內部的排列方式 */
+            text-align: center;
+
+            /* 
+                vertical-align 行內、表格的內容垂直對齊
+                top         整行頂部 （表格能用）
+                middle      整行中間 （表格能用）
+                bottom      整行底部 （表格能用）
+                text-top    文字頂部
+                text-bottom 文字底部
+                super       上標
+                sub         下標
+            */
+            vertical-align: sub;
+
+        }
+
+        p {
+            line-height: 3em;
+            border: 5px double goldenrod;
+        }
+
+        span {
+            text-decoration: overline underline;
+        }
+
+        .va-top {
+            vertical-align: top;
+        }
+
+        .va-middle {
+            vertical-align: middle;
+        }
+
+        .va-bottom {
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        <span class="">AAga</span>
+        <img src="https://picsum.photos/16/16/?random=10">
+    </p>
+</body>
+
+</html>
