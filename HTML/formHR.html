@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Open Sans', 'Microsoft JhengHei', sans-serif;
+            background: #f7f7ff;
+            padding: 40px;
+            line-height: 32px;
+            color: #2b2b2b;
+        }
+
+        h1 {
+            font-family: 'Roboto', 'Microsoft JhengHei', sans-serif;
+        }
+
+
+        form {
+            width: 800px;
+            background: #ffffff;
+            border-radius: 24px;
+            margin: 0px auto;
+            box-shadow: 4px 4px 8px 1px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+        }
+
+        header {
+            width: 100%;
+            color: #EEE;
+            background-color: #0B3265;
+            display: block;
+            padding: 16px;
+        }
+
+        main {
+            padding: 24px;
+
+        }
+
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        textarea {
+
+            width: 100%;
+            height: 32px;
+            border: 2px solid rgb(176, 176, 176);
+            border-radius: 4px;
+            padding: 4px 8px;
+            box-sizing: border-box;
+
+        }
+
+        select {
+            padding: 4px 8px;
+            border-radius: 4px;
+            height: 32px;
+
+        }
+
+        input[type="text"]::placeholder {
+            color: rgba(0, 0, 0, 0.3);
+        }
+
+        .half-measure {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .half-row {
+            width: 100%;
+            padding-right: 16px;
+        }
+
+
+        input[type="date"] {
+            width: 50%;
+        }
+
+        .small {
+            font-size: 0.8rem;
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        .submit {
+            display: block;
+            margin: 0 auto;
+            height: 32px;
+            border-radius: 4px;
+            border: 1px solid rgb(176, 176, 176);
+            font-size: 18px;
+            color: #0B3265;
+        }
+    </style>
+</head>
+
+
+<body>
+    <form action="">
+        <header>
+            <div class="header">
+                <h1>工作申請表</h1>
+                <p>HR 表單</p>
+                <hr>
+            </div>
+        </header>
+        <main>
+            <p>
+                <label for="">姓名</label><br>
+                <input type="text" name="name">
+            </p>
+
+            <p>
+            <div class="half-measure">
+                <div class="half-row">
+                    <label for="">年齡</label><br>
+                    <input type="number" name="age">
+                </div>
+                <div class="half-row">
+                    <label for="">血型</label><br>
+                    <input type="number" name="bloodType">
+                </div>
+            </div>
+            </p>
+
+            <p>
+            <div class="half-measure">
+                <div class="half-row">
+                    性別<br>
+                    <input type="radio" name="gender" value="male">
+                    <label for="male">男</label>
+                    <input type="radio" name="gender" value="female">
+                    <label for="">女</label>
+                    <input type="radio" name="gender" value="other">
+                    <label for="">其它</label>
+                </div>
+                <div class="half-row">
+                    生日<br>
+                    <select name="" id="">
+                        <script>
+                            const currentYear = new Date().getFullYear();
+                            for (let year = currentYear; year >= 1920; year--) {
+                                document.write(`<option value="${year}">${year}</option>`);
+                            }
+                        </script>
+                    </select> 年
+
+                    <select name="" id="">
+                        <script>
+                            for (let month = 1; month <= 12; month++) {
+                                document.write(`<option value="${month}">${month}</option>`);
+                            }
+                        </script>
+                    </select> 月
+
+                    <select name="" id="">
+                        <script>
+                            for (let day = 1; day <= 31; day++) {
+                                document.write(`<option value="${day}">${day}</option>`);
+                            }
+                        </script>
+                    </select> 日
+                </div>
+            </div>
+            </p>
+
+            <p>
+                <label for="">電子郵件</label>
+                <input type="text" name="email" placeholder="example@example.com"><br>
+                <span class="small">example@example.com</span>
+
+            </p>
+            <p>
+                <label for="">聯絡電話</label>
+                <input type="text" name="phone">
+
+            </p>
+            <p>
+                <label for="">聯絡地址</label>
+                <input type="text" name="address">
+            </p>
+
+            <p>
+
+                <label for="">申請職位</label>
+                <input type="text" name="job">
+            </p>
+            <p>
+
+                <label for="">到職日期</label><br>
+                <input type="date" name="startDate">
+
+            </p>
+            <p>
+                可工作日<br>
+                <input type="checkbox" name="workDay[]" value="Monday">
+                <label for="">星期一</label>
+                <input type="checkbox" name="workDay[]" value="Tuesday">
+                <label for="">星期二</label>
+                <input type="checkbox" name="workDay[]" value="Wednesday">
+                <label for="">星期三</label>
+                <input type="checkbox" name="workDay[]" value="Thursday">
+                <label for="">星期四</label>
+                <input type="checkbox" name="workDay[]" value="Friday">
+                <label for="">星期五</label>
+            </p>
+            <p>
+                <label for="">作品集</label><br>
+                <input type="file" name="portfolio">
+            </p>
+            <p>
+                自傳
+            </p>
+            <p>
+
+                <textarea name="autobiography" id="" style="height: 200px;"></textarea>
+            </p>
+
+            <p>
+            <div>
+                <input class="submit" type="submit" value="提交申請">
+            </div>
+            </p>
+        </main>
+
+
+
+        <!-- 姓名Name（文字）First Name Last Name
+
+        年齡Age（數字） 性別（單選）gender male female other
+        E-mail example@example.com（文字） 電話Phone Number（文字）
+        生日Birth Date（下拉）
+        地址（文字）
+
+        申請職位Applied Position（文字） 到職日Earliest Possible Start Date（日期）
+        可工作日（多選）
+
+        作品（上傳）
+        自傳（多文字） -->
+
+
+
+    </form>
+
+
+</body>
+
+</html>
