@@ -1,0 +1,115 @@
+.loading {
+    width: 100vw;
+    position: fixed;
+    z-index: 4;
+    text-align: center;
+    line-height: 100vh;
+    display: fixed;
+}
+
+.loading .word {
+    font-size: 32px;
+    z-index: 5;
+    position: absolute;
+    top: 50%;
+    left: 47%;
+    color: #EEEEEE;
+}
+
+animation: bounce 0.75s cubic-bezier(0.05, 0, 0.2, 1) infinite alternate;
+display: inline-block;
+transform: translate3d(0, 0, 0);
+
+
+.load-left,
+.load-right {
+    position: absolute;
+    background-color: #333;
+    width: 50vw;
+    height: 100vh;
+    top: 0%;
+    z-index: 3;
+}
+
+.load-left {
+    animation: leftMove 5s 2s forwards;
+}
+
+.load-right {
+    animation: rightMove 5s 2s forwards;
+    right: 0%;
+    background-color: #870505;
+}
+
+@keyframes leftMove {
+    0% {
+        /* 開始時完全透明 */
+        transform: translateX(0);
+        /* 往上移動 */
+    }
+
+    100% {
+        /* 結束時完全顯示 */
+        transform: translateX(-50vw);
+        /* 最終位置 */
+    }
+}
+
+@keyframes rightMove {
+
+    0% {
+        /* 開始時完全透明 */
+        transform: translateX(0);
+        /* 往上移動 */
+    }
+
+    100% {
+        /* 結束時完全顯示 */
+        transform: translateX(50vw);
+        /* 最終位置 */
+    }
+}
+
+.letter:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.letter:nth-child(2) {
+    animation-delay: 0.0333333333s;
+}
+
+.letter:nth-child(3) {
+    animation-delay: 0.1333333333s;
+}
+
+.letter:nth-child(4) {
+    animation-delay: 0.2333333333s;
+}
+
+.letter:nth-child(5) {
+    animation-delay: 0.3333333333s;
+}
+
+.letter:nth-child(6) {
+    animation-delay: 0.4333333333s;
+}
+
+.letter:nth-child(7) {
+    animation-delay: 0.5333333333s;
+}
+
+.letter:nth-child(8) {
+    animation-delay: 0.6333333333s;
+}
+
+.letter:nth-child(9) {
+    animation-delay: 0.7333333333s;
+}
+
+.letter:nth-child(10) {
+    animation-delay: 0.8333333333s;
+}
+
+.letter:nth-child(11) {
+    animation-delay: 0.9333333333s;
+}
