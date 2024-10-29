@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>珂拉琪 Collage 歌曲</title>
+    <link rel="icon" href="https://i.kfs.io/artist/global/35047450,0v3/fit/160x160.jpg" type="image/png">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'>
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css'>
+
+    <style>
+        /* http://meyerweb.com/eric/tools/css/reset/ 
+        v2.0 | 20110126
+        License: none (public domain)
+        */
+
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        blockquote,
+        q {
+            quotes: none;
+        }
+
+        blockquote:before,
+        blockquote:after,
+        q:before,
+        q:after {
+            content: '';
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        /* CSS開始 */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            color: #232323;
+            /* background-color: #3A3436; */
+            font-family: PingFangTC-Regular, "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+
+        main {
+            width: 1060px;
+            margin: auto;
+            margin-top: -32px;
+        }
+
+        header {
+            background-image: url(https://assets.juksy.com/files/articles/116299/62c03bac706c7.jpg);
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 80vh;
+            filter: brightness(0.5);
+        }
+
+        .nav-ul {
+            width: 90%;
+            background-color: #7B0119;
+            border-radius: 8px;
+            box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.4);
+            margin: 0 auto;
+            padding: 16px;
+            display: flex;
+            justify-content: center;
+            /* border: 1px solid #bc955c; */
+            filter: brightness(1);
+            cursor: pointer;
+            list-style-type: none;
+        }
+
+        .nav-li {
+            /* background-color: brown; */
+            list-style-type: none;
+        }
+
+        .nav-li {
+            line-height: 32px;
+            color: #bc955c;
+            font-size: 20px;
+            font-weight: bolder;
+            transition: 0.2s;
+        }
+
+        .nav-li:hover {
+            color: #dfc161;
+        }
+
+        .nav-li:not(:first-child)::before {
+            content: "";
+            width: 1px;
+            height: 32px;
+            background-color: #bc955c;
+            margin: 0 1rem;
+            display: inline-block;
+            vertical-align: bottom;
+        }
+
+        .main-info {
+            padding-top: 20px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .video {
+            width: 65%;
+            padding: 16px;
+        }
+
+        .info {
+            width: 35%;
+            padding: 16px;
+        }
+
+        .info h1 {
+            font-size: 32px;
+            padding: 4px 0;
+            font-weight: bolder;
+        }
+
+        .info h2 {
+            font-size: 18px;
+            padding: 8px 0;
+            line-height: 36px;
+        }
+
+        .info h2 a {
+            text-decoration: none;
+            color: #3A3436;
+        }
+
+        .info p {
+            padding: 8px 0;
+            color: #646464;
+        }
+
+        .lyric {
+            white-space: pre-line;
+            padding: 24px;
+            line-height: 2;
+        }
+
+
+        footer {
+            width: 100%;
+            text-align: center;
+            color: aliceblue;
+            background-color: #3A3436;
+            color: #7d7d7d;
+            padding: 32px 0;
+        }
+
+        footer p {
+            padding: 8px;
+        }
+
+
+        .icon {
+            padding: 0 8px;
+        }
+
+        #no {
+            transition: 0.5s;
+        }
+
+        #no:hover {
+            color: aliceblue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <div class="container">
+            <nav>
+                <ul class="nav-ul">
+                    <li class="nav-li button" data-song="萬千花蕊慈母悲哀">萬千花蕊慈母悲哀</li>
+                    <li class="nav-li button" data-song="這該死的拘執佮愛">這該死的拘執佮愛</li>
+                    <li class="nav-li button" data-song="葬予規路火烌猶在">葬予規路火烌猶在</li>
+                    <li class="nav-li button" data-song="蓮花空行身染愛">蓮花空行身染愛</li>
+                    <li class="nav-li button" data-song="傷心地獄芳花引魂">傷心地獄芳花引魂</li>
+                </ul>
+            </nav>
+
+            <div class="main-info">
+                <div class="video">
+                    <iframe id="youtube" width="100%" height="315" src="https://youtu.be/kkUWlcjmOew"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <div class="info">
+                    <p>歌曲</p>
+                    <h1 id="title">萬千花蕊慈母悲哀</h1>
+                    <h2>
+                        <a href="https://www.kkbox.com/tw/tc/artist/0p7Arw-CBBMNitee75">
+                            <img src="https://i.kfs.io/artist/global/35047450,0v3/fit/160x160.jpg" alt=""
+                                style="width: 36px; border-radius: 100%;">
+                            珂拉琪 Collage
+                        </a>
+                    </h2>
+                    <p>作詞：<span id="lyricist"></span></p>
+                    <p>作曲：<span id="composer"></span></p>
+                    <p>編曲：<span id="arranger"></span></p>
+                </div>
+            </div>
+            <hr>
+            <div id="lyric" class="lyric">
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            <a href="https://open.spotify.com/artist/1YtYHaWLV0IU7SwhvG6Luk">
+                <i class="fab fa-spotify fa-inverse fa-2x icon"></i>
+            </a>
+            <a href="https://www.youtube.com/@collage7275">
+                <i class="fab fa-youtube fa-inverse fa-2x icon"></i>
+            </a>
+            <a href="https://www.facebook.com/Collage7275/?locale=zh_TW">
+                <i class="fab fa-facebook fa-inverse fa-2x icon"></i>
+            </a>
+        </p>
+        <p>© No Company Reserved.</p>
+        <p>沒有股份有限公司 (0800-061-000)</p>
+        <p id="no">沒有隱私權政策｜也沒有智財權說明</p>
+    </footer>
+
+    <script>
+        let song = {
+            萬千花蕊慈母悲哀: {
+                lyricist: "王家權",
+                composer: "王家權",
+                arranger: "珂拉琪",
+                youtube: "https://www.youtube.com/embed/kkUWlcjmOew?si=J3QwLrTyHEV8x4Xd",
+            },
+            葬予規路火烌猶在: {
+                lyricist: "王家權",
+                composer: "王家權",
+                arranger: "珂拉琪",
+                youtube: "https://www.youtube.com/embed/KSq5wxw9-9Q?si=fst6umFpM_5azbSx",
+            },
+            這該死的拘執佮愛: {
+                lyricist: "王家權",
+                composer: "王家權",
+                arranger: "珂拉琪",
+                youtube: "https://www.youtube.com/embed/5h_mxY1At7E?si=kcpaSTqWsavVGmzr",
+            },
+            蓮花空行身染愛: {
+                lyricist: "王家權",
+                composer: "王家權",
+                arranger: "珂拉琪",
+                youtube: "https://www.youtube.com/embed/g4mQmLZ-lEw?si=D9emuPYG6Yd06tUS",
+            },
+            傷心地獄芳花引魂: {
+                lyricist: "珂拉琪",
+                composer: "珂拉琪",
+                arranger: "王家權",
+                youtube: "https://www.youtube.com/embed/5vyT2qDmFhE?si=GyYdC4qtRQSqVpZJ",
+            }
+        };
+
+        console.log(song);
+
+        let lyrics = {
+            萬千花蕊慈母悲哀: `
+                    下晡 一个人踮厝內
+                    西北雨 沃澹窗外的衫
+                    外口的人 猶未轉來
+                    戇戇咧等
+                    戇戇攑一支雨傘
+
+                    為你 幾若擺睏袂去
+                    全世界 揣袂著你的形影
+                    凡勢 會當共你放捒
+                    氣身惱命
+                    我哪會攏無要無緊
+
+                    踮遮規暝 看電火閃爍
+                    我踮遮等待 拍無去的人
+                    聽厝內的聲 聲聲佇咧吼
+                    我踅來踅去 思念火燒房間
+
+                    袂開的花
+                    無欲轉來的人
+                    美麗的你啊
+                    想著你彼當時
+                    攑懸你的旗仔
+                    路邊的話
+                    滿街路雨紛飛
+                    時代的變卦
+                    孤單的我一个人
+                    問天也毋捌
+
+                    手內啥物攏無
+                    只賰我欲予你的愛
+                    有血有肉的人
+                    煞下落不明
+
+                    共你的 記持啊
+                    囥佇我的心內
+                    騎你的 白馬啊
+                    行你欲行的路
+                    風吹來 花落塗
+                    點一欉香祈求
+                    （南無觀世音菩薩）
+
+                    若準講你
+                    算著這齣悲劇
+                    你敢會看顧
+                    紲落來伊頭前
+                    彼逝歹行的路
+                    夢中的我
+                    看你沓沓仔行
+                    牽你的亡魂
+                    有一工咱做伙
+                    轉去彼个所在
+
+                    我 蔫去的愛（規路攏是）
+                    佮你 恬去的心（你）
+                    佇這烏暗時代（佇這烏暗時代）
+                    是有緣無份（想欲講出）
+                    寫袂了的批（的）
+                    佮講袂煞的話（奈何）
+                    (亻因) 開袂完的銃（開袂完的銃）
+                    看人去樓空（火烌猶在）
+
+                    雨 微微仔落
+                    天 微微仔光
+                    看你 微微仔笑
+                    後世人再會`,
+            葬予規路火烌猶在: `
+                    揣我的身軀
+                    行入你的夢中
+                    用我的雙跤
+                    去寫你的溫柔無限
+                    你暗淡的心
+                    是咱兩人未敨的結
+                    我就欲離開
+                    你嘛是無可奈何
+
+                    時代猛獸內底
+                    揣袂著有名有姓的人
+                    我想著
+                    彼个時陣 (亻因)無聲無說
+                    提銃踏入 咱的所在
+                    規城眾生絕望
+
+                    檢采我有千年
+                    千百種人生
+                    也無法度阻擋
+                    人造的惡意
+                    我看著這條路
+                    沃澹的塗跤
+                    行佇你的頭前
+                    是我的生死
+
+                    你恬恬仔看我
+                    倒佇咧水底
+                    你恬恬仔咧聽
+                    遙遠的風聲
+                    你恬恬仔愛我
+                    愛我一世人
+                    你講 你會恬恬仔等我
+                    轉來你身邊 身軀邊
+
+                    鬼使火神
+                    徛佇咧路邊
+                    伊的目睭
+                    閣擘袂金
+                    過路陰司
+                    毋是你的跡
+                    心安 就免驚惶
+
+                    毋知影你的冤屈
+                    看袂著頭前的路
+                    你跤步愛踏予好
+                    連鞭過橋就好
+                    （眾神衛旁）
+
+                    攏予你 全部攏予你
+                    是按怎講袂清
+                    時代的怨嘆
+
+                    有耳無喙 佇這个世界
+                    美麗的你 好好讀冊
+
+                    伊講的話 佇風中咧飛
+                    咧吹我的頭毛
+
+                    心也茫茫 無清醒的夢
+                    逐家家財萬貫 我的
+                    心也茫茫 無清醒的夢
+                    逐家一生平安 轉來`,
+            這該死的拘執佮愛: `
+                    你的心 親像花
+                    無人應 隨蔫去
+                    你愛的人 誠固執
+                    予伊的夢 伊提袂起
+
+                    你是一个 如此溫柔的人
+                    你應該 愛你值得愛的人
+                    但是 頭前有我欲行的路
+                    毋知你敢會了解
+
+                    是按怎拆開你的
+                    心肝內底
+                    會看著 暗淡的愛流成水
+                    當我越頭離開時
+                    心內亂雨紛飛
+
+                    因為你 的眼神
+                    戇戇咧望 真毋願
+
+                    若是你 會當看著
+                    (亻因)佇咧彼搭
+                    咱就會使
+                    做伙搝彼陣落水的人
+                    伊寫的彼條歌
+                    是拆破生死的紙
+                    敢講你 真正攏無感覺
+                    攏無感覺
+
+                    是按怎拆開你的
+                    心肝內底
+                    會看著 暗淡的愛流成血
+                    當我無閣咧注神
+                    磕袂著就想著你
+
+                    但是你 的眼神
+                    無彩工 準拄煞
+
+                    若是你 會當看著
+                    (亻因)佇咧彼搭
+                    咱就會使
+                    做伙搝彼陣落水的人
+                    伊寫的彼條歌
+                    是拆破生死的紙
+                    敢講你 真正攏無感覺
+                    攏無感覺
+
+                    （猛獸亂使 侵門踏戶）
+                    （厝邊頭尾 寸草無生）
+                    （猛獸亂使 侵門踏戶）
+                    （厝邊頭尾 寸草無生）
+                    `,
+            蓮花空行身染愛: `＊「由本自性清淨故，令諸愛染悉無垢。」
+
+                    又閣是彼个 無代無誌想著的形影
+                    iū-koh sī hit ê, bô-tài-bô-tsì siūnn tio̍h ê hîng-iánn
+                    親像一陣風 吹落來 是春風少年
+                    tshin-tshiūnn tsi̍t tsūn-hong, tshue loh lâi, sī tshun hong siáu-liân
+
+                    坐嘛是思念 坐袂牢 真無聊的思念
+                    tsē mà-sī su-liām, tsē bē tiâu, tsin bô-liâu ê su-liām
+                    倒咧眠床頂 予月娘 笑規个暗暝
+                    tó leh bîn-tshn̂g tíng, hōo gue̍h-niû tshiò kui-ê àm-mî
+                    
+                    我行過你的世界
+                    guá kiânn-kuè lí ê sè-kài
+                    啥物我攏無愛
+                    siánn-mih guá lóng bô ài
+                    只想欲佇你心內（寫一條歌）
+                    tsí siūnn beh tī lí sim-lāi（siá tsi̍t tiâu kua）
+                    
+                    車行過 *𪜶的期待
+                    tshia kiânn-kuè in ê kî-thāi
+                    這站閣無落來
+                    tsit tsām koh bô loh-lâi
+                    無想欲對誰交代（心內驚驚）
+                    bô siūnn beh tuì siáng kau-tài（sim-lāi kiann-kiann）
+                    
+                    想起我彼暗小可仔歹勢
+                    siūnn-khí guá hit-àm sió-khuá-á pháinn-sè
+                    予你揣著我
+                    hōo lí tshuē-tio̍h guá
+                    規身軀藏無好勢的委屈
+                    kui-sing-khu tshàng bô hó-sè ê uí-khut
+                    
+
+                    風 中的飛龍咧吼
+                    hong-tiong ê pue-liông leh háu
+                    聲 聲予天搖地動
+                    siann-siann hōo thinn-iô tē-tāng
+                    愛你的傳說寫佇頂懸
+                    ài lí ê thuân-suat siá tī tíng-kuân
+                    感情紲來愈飛愈懸
+                    kám-tsîng sua-lâi lú-pue lú-kuân
+
+                    花 開佇你蹛的樓
+                    hue khui-tī lí tuà ê lâu
+                    想 當時欲綴你走
+                    siūnn tong-sî beh tuè lí tsáu
+                    多情的雨崁著目睭
+                    to-tsîng ê hōo kham tio̍h ba̍k-tsiu
+                    你的代誌講袂清楚
+                    lí ê tài tsì kóng bē tshing-tshó
+
+                    看你行過千山萬水
+                    khuànn lí kiânn-kuè tshian-san-bān-suí
+                    手內薔薇微微仔芳
+                    tshiú-lāi tshiông-bî bî-bî-á phang
+                    行踏輕鬆跤步的我
+                    kiânn ta̍h khin-sang kha-pōo ê guá
+                    恬恬佇遮攏無出聲
+                    tiām tiām tī tsia lóng bô tshut-siann
+                    
+                    日子過一工閣一工
+                    ji̍t-tsí kuè tsi̍t-kang koh tsi̍t-kang
+                    你的一切攏猶未放
+                    lí ê it tshè lóng iá-buē pàng
+                    越頭欲揣過去的我
+                    ua̍t thâu beh tshuē kuè-khì ê guá
+                    煞來袂記家己的名
+                    suah-lâi bē kì ka-kī ê miâ
+
+
+                    是我欲陪你流浪
+                    sī guá beh puê lí liû-lōng
+                    長路終點滿天花雨
+                    tn̂g-lōo tsiong-tiám muá-thinn hue-ú 
+                    雺霧內底戇神
+                    bông-bū lāi-té gōng-sîn
+                    千年流轉你的世界
+                    tshian-nî liû-tsuán lí ê sè-kài
+                    自作多情的人
+                    tsū-tsok-to-tsîng ê lâng
+                    眼前地獄家己揀的
+                    gán-tsiân tē-ga̍k ka-kī kíng ê
+                    天上 地下 人間
+                    thian-siōng, tē-hā, jîn-kan
+                    四方妖孽請恁退下
+                    sù-hong iau-gia̍t tshiánn lín thè-hā
+                    
+                    這繁華世間
+                    tse huân-hua sè-kan
+                    眾生有情人
+                    tsiòng-sing ū-tsîng-lâng
+                    有情生煩惱（甘願受罪）
+                    ū-tsîng senn huân-ló（kam-guān siū-tsuē）
+                    
+                    心狂閣火著
+                    sim-kông koh hué-to̍h
+                    明知會艱苦
+                    bîng tsai ē kan-khóo
+                    千錯萬錯 （攏佮你無關）
+                    tshian-tshò-bān-tshò（lóng ka̍h lí bô-kuan）`,
+            傷心地獄芳花引魂: `求神切斷世間迷戀
+                    降伏千百夜叉惡鬼
+                    孽鏡台前斟酌審判
+                    嚨喉出力講袂出聲
+                    大鐵圍山無間地獄
+                    火燒獄城十萬八千
+                    越頭看無來時的路
+                    明王指引頭前光明
+
+                    若是講 我看天無望
+                    坦白講 嘛望地無路
+                    一个人 無喙嘛無舌
+                    孤身流轉 佇北陰酆都
+                    陰風中 聽枵鬼咧爬
+                    心驚驚 見十殿閻君
+                    戇戇踅 等烏白無常
+                    向腰牽我 攝我的亡魂
+
+                    頭犁犁的少年家
+                    你欲越去佗位
+                    滿面風霜 拄著
+                    百千萬劫
+                    敢是予鬼仔煞著
+                    櫳仔內面的人
+                    無名無姓 恬恬
+                    予人擲佇塗跤
+
+                    凡勢是意外
+                    抑是生來註定
+                    敢若一場夢
+                    規身軀輕鬆
+                    火王爺現身
+                    目睭擘金金
+                    煩惱攏烌去
+                    無白色的水
+
+                    複製你的愛
+                    複製你的勇氣
+                    複製你的眼
+                    複製你的靈魂
+                    複製你的淚
+                    幻化阿修羅
+                    代你堪一切
+                    絕望的火
+
+                    轉輪聖王起身
+                    守護無命人客
+                    遠遠的聲傳來
+                    伊的祈求
+                    眾神攑燈相送
+                    看顧有情眾生
+                    一生珠淚落塗
+                    路邊紅花清芳
+
+                    佇隱痀橋終點
+                    是自由的向望
+                    望你會當平平安安
+                    放袂記的人生
+                    有月娘咧照路
+                    祝你行過一世人的傷悲
+                    拔開你手內
+                    彼縛牢的鐵鏈
+                    無傷無痕 袂閣疼矣
+                    拍毋見的身軀
+                    攏揣倒轉來
+                    頭前有人 咧等你`
+        }
+
+
+        into();
+
+        function into() {
+            songSwitch("萬千花蕊慈母悲哀");
+        };
+
+        let button_class = document.querySelectorAll('.button')
+        button_class.forEach(function (button) {
+            button.onclick = function () {
+                console.log(this.dataset.song);
+                songSwitch(this.dataset.song);
+            };
+        });
+
+
+        function songSwitch(songId) {
+            document.getElementById('title').innerHTML = songId;
+            document.getElementById('lyric').innerHTML = lyrics[songId];
+            Object.entries(song[songId]).forEach(([key, value]) => {
+                if (key == 'youtube') {
+                    document.getElementById(key).src = value;
+                } else {
+                    document.getElementById(key).innerHTML = value;
+                };
+            });
+        };
+
+        document.getElementById('no').onclick = function () {
+            alert("就真的沒有政策跟說明啊QwQ");
+        };
+    </script>
+
+
+
+</body>
+
+</html>
