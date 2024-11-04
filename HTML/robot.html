@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot</title>
+    <style>
+        * {
+            /* border: 1px solid #000; */
+        }
+
+        .container {
+            width: 400px;
+            height: 100vh;
+        }
+
+        /* ============== 頭 ============== */
+        header {
+            width: 100px;
+            height: 100px;
+            display: flex;
+        }
+
+        .eye {
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 100px;
+            box-shadow: 0px 0px 20px 10px rgb(248, 58, 58);
+        }
+
+        .neck {
+            width: 40px;
+            height: 50px;
+        }
+
+        /* ============== 上半身 ============== */
+        .upper {
+            display: flex;
+        }
+
+        main {
+            width: 200px;
+            height: 250px;
+        }
+
+        .hand {
+            width: 260px;
+            height: 40px;
+        }
+
+        /* ============== 下半身 ============== */
+        footer {
+            width: 200px;
+            display: flex;
+            justify-self: center;
+            position: relative;
+        }
+
+        footer .leg {
+            width: 50px;
+            height: 180px;
+
+        }
+
+        footer .foot {
+            width: 140px;
+            height: 60px;
+            position: absolute;
+            top: 100%;
+            right: -30%;
+        }
+
+        footer .right {
+            right: -30%;
+        }
+
+        footer .left {
+            right: 60%;
+        }
+
+
+        /* ============== 共用樣式 ============== */
+        .gray {
+            background: linear-gradient(to bottom, #f2f6f8 0%, #d8e1e7 50%, #b5c6d0 51%, #e0eff9 100%);
+        }
+
+        .mAuto {
+            margin: auto;
+        }
+
+        .hand,
+        .neck,
+        main,
+        header,
+        footer .foot,
+        footer .leg {
+            border-radius: 20px;
+            box-shadow: 10px 10px 0px 0px #535353;
+            /* 0px 10px 0px rgba(0, 0, 0, 0.2), */
+            /* 10px 0px 0px rgba(0, 0, 0, 0.2); */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mAuto">
+
+        <!-- ============== 頭 ============== -->
+        <header class="gray mAuto">
+            <div class="eye mAuto"></div>
+            <div class="eye mAuto"></div>
+        </header>
+
+        <!-- 脖子 -->
+        <div class="neck gray mAuto"></div>
+
+        <!-- ============== 上半身 ============== -->
+        <div class="upper mAuto">
+            <div class="hand gray"></div>
+            <main class="gray mAuto"></main>
+            <div class="hand gray"></div>
+        </div>
+
+        <!-- ============== 下半身 ============== -->
+        <!-- 大腿 -->
+        <footer class="mAuto">
+            <div class="leg mAuto gray"></div>
+            <div class="leg mAuto gray"></div>
+        </footer>
+
+        <!-- 小腿 -->
+        <footer class="mAuto">
+            <div class="leg gray mAuto">
+                <!-- 腳掌 -->
+                <div class="foot gray left"></div>
+            </div>
+            <div class="leg mAuto gray">
+                <div class="foot gray right"></div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>
