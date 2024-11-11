@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: "Roboto", sans-serif;
+        }
+
+        .main {
+            width: 80%;
+            /* height: 60vh; */
+            min-height: 72vh;
+            background-color: rgb(56, 55, 71);
+            margin: 40px auto;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 40px;
+            border-radius: 16px;
+        }
+
+        #colorName {
+            color: white;
+            width: 400px;
+            height: 60px;
+            line-height: 60px;
+            border: 1px solid white;
+            text-align: center;
+            margin: 20px auto;
+            background-color: rgb(56, 55, 71);
+            border-radius: 16px;
+            box-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
+            font-size: 24px;
+            font-weight: bolder;
+            Letter-spacing: 4px;
+            text-transform: capitalize;
+        }
+
+        .box {
+            border-radius: 16px;
+            margin: 16px;
+            width: 200px;
+            height: 100px;
+            background-color: rgb(85, 248, 248);
+            border: 1px;
+            filter: contrast(30%);
+            transition: 0.5s;
+            cursor: pointer;
+            border-right: 10px solid rgba(255, 255, 255, 0.5);
+            border-bottom: 10px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0px 1px 1px rgb(255, 255, 255);
+        }
+
+        .box:hover {
+            filter: contrast(100%);
+        }
+
+        .box:active {
+            border: 0px;
+        }
+
+        #change {
+            color: white;
+            width: 200px;
+            height: 60px;
+            line-height: 60px;
+            border: 1px solid white;
+            text-align: center;
+            margin: 20px auto;
+            cursor: pointer;
+            background-color: rgb(56, 55, 71);
+            border-radius: 16px;
+            border-right: 5px solid rgba(255, 255, 255, 0.5);
+            border-bottom: 5px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
+            font-size: 24px;
+            font-weight: bolder;
+        }
+
+        #change:hover {
+            filter: contrast(50%);
+        }
+
+        #change:active {
+            filter: drop-shadow(0px 4px 20px rgb(255, 255, 255)) invert(75%);
+        }
+    </style>
+</head>
+
+<body id="body">
+
+    <!-- 顯示顏色名稱 -->
+    <div id="colorName">white</div>
+
+    <!-- 方塊區 -->
+    <div class="main">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+
+    <!-- 按鈕 -->
+    <div id="change">
+        換一組方塊
+    </div>
+
+
+    <script>
+        // 顏色陣列
+        const colors = [
+            "red", "green", "blue", "yellow", "orange", "purple", "pink", "brown", "black", "white",
+            "gray", "cyan", "magenta", "lime", "maroon", "navy", "teal", "olive", "aqua", "fuchsia",
+            "silver", "gold", "indigo", "violet", "orchid", "chocolate", "coral", "darkblue", "darkgreen",
+            "darkred", "darkgray", "lightgray", "lightblue", "lightgreen", "lightyellow", "lightpink",
+            "lightcyan", "lightcoral", "slateblue", "seashell", "wheat", "tan", "plum", "khaki", "salmon",
+            "sienna", "peru", "lightskyblue", "lightseagreen", "mediumorchid", "rebeccapurple", "whitesmoke"
+        ];
+
+        // 獲取box
+        let boxClass = [...document.querySelectorAll('.box')];
+
+        // 變換方塊
+        function changeBox() {
+            boxClass.forEach(ele => {
+                let rngColor = colors[Math.floor(Math.random() * colors.length)];
+                ele.style.width = `${Math.floor(Math.random() * 500) + 100}px`;
+                ele.style.backgroundColor = rngColor;
+                ele.setAttribute("data-color", rngColor);
+            });
+        }
+
+        // 給予每個方塊監聽
+        boxClass.forEach(ele => {
+            ele.addEventListener('click', function () {
+                const bgColor = window.getComputedStyle(ele).backgroundColor;
+                // console.log(bgColor);
+                document.getElementById('body').style.backgroundColor = bgColor;
+                document.getElementById('colorName').innerHTML = ele.getAttribute("data-color");
+            })
+        })
+
+        // 換方塊按鈕
+        document.getElementById('change').addEventListener('click', function () {
+            changeBox();
+        });
+
+        // 初始化讓方塊出來
+        changeBox();
+
+
+    </script>
+
+</body>
+
+</html>
