@@ -14,48 +14,57 @@
             font-family: "Roboto", sans-serif;
         }
 
+        #body {
+            background-color: white;
+        }
+
         .main {
             width: 80%;
-            /* height: 60vh; */
             min-height: 72vh;
             background-color: rgb(56, 55, 71);
+            border-radius: 16px;
+            box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.5);
             margin: 40px auto;
+            padding: 40px;
             display: flex;
             flex-wrap: wrap;
-            padding: 40px;
-            border-radius: 16px;
+            border-top: 20px solid rgb(0, 0, 0, 0.7);
+            border-left: 20px solid rgba(0, 0, 0, 0.3);
         }
 
         #colorName {
-            color: white;
             width: 400px;
             height: 60px;
             line-height: 60px;
+            color: white;
             border: 1px solid white;
-            text-align: center;
-            margin: 20px auto;
-            background-color: rgb(56, 55, 71);
             border-radius: 16px;
+            background-color: rgb(56, 55, 71);
+            border-right: 5px solid rgba(255, 255, 255, 0.7);
+            border-bottom: 5px solid rgba(255, 255, 255, 0.4);
             box-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
             font-size: 24px;
             font-weight: bolder;
-            Letter-spacing: 4px;
+            text-align: center;
+            /* 首字母大寫 */
             text-transform: capitalize;
+            /* 字母間距 */
+            Letter-spacing: 4px;
+            margin: 20px auto;
         }
 
         .box {
-            border-radius: 16px;
-            margin: 16px;
             width: 200px;
             height: 100px;
+            margin: 16px;
             background-color: rgb(85, 248, 248);
-            border: 1px;
+            border-radius: 16px;
+            border-right: 10px solid rgba(255, 255, 255, 0.8);
+            border-bottom: 10px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0px 0px 1px rgb(255, 255, 255);
             filter: contrast(30%);
             transition: 0.5s;
             cursor: pointer;
-            border-right: 10px solid rgba(255, 255, 255, 0.5);
-            border-bottom: 10px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 0px 1px 1px rgb(255, 255, 255);
         }
 
         .box:hover {
@@ -67,19 +76,19 @@
         }
 
         #change {
-            color: white;
-            width: 200px;
+            width: 240px;
             height: 60px;
             line-height: 60px;
             border: 1px solid white;
-            text-align: center;
-            margin: 20px auto;
-            cursor: pointer;
             background-color: rgb(56, 55, 71);
             border-radius: 16px;
-            border-right: 5px solid rgba(255, 255, 255, 0.5);
-            border-bottom: 5px solid rgba(255, 255, 255, 0.5);
+            border-right: 5px solid rgba(255, 255, 255, 0.7);
+            border-bottom: 5px solid rgba(255, 255, 255, 0.4);
             box-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            margin: 20px auto;
             font-size: 24px;
             font-weight: bolder;
         }
@@ -114,19 +123,40 @@
 
     <!-- 按鈕 -->
     <div id="change">
-        換一組方塊
+        Change box
     </div>
-
 
     <script>
         // 顏色陣列
         const colors = [
-            "red", "green", "blue", "yellow", "orange", "purple", "pink", "brown", "black", "white",
-            "gray", "cyan", "magenta", "lime", "maroon", "navy", "teal", "olive", "aqua", "fuchsia",
-            "silver", "gold", "indigo", "violet", "orchid", "chocolate", "coral", "darkblue", "darkgreen",
-            "darkred", "darkgray", "lightgray", "lightblue", "lightgreen", "lightyellow", "lightpink",
-            "lightcyan", "lightcoral", "slateblue", "seashell", "wheat", "tan", "plum", "khaki", "salmon",
-            "sienna", "peru", "lightskyblue", "lightseagreen", "mediumorchid", "rebeccapurple", "whitesmoke"
+            "aqua", "black", "blue", "fuchsia", "gray", "green", "lime", "maroon",
+            "navy", "olive", "purple", "red", "silver", "teal", "white", "yellow",
+            "aliceblue", "antiquewhite", "aquamarine", "azure", "beige", "bisque",
+            "blanchedalmond", "blueviolet", "brown", "burlywood", "cadetblue",
+            "chartreuse", "chocolate", "coral", "cornflowerblue", "cornsilk", "crimson",
+            "cyan", "darkblue", "darkcyan", "darkgoldenrod", "darkgray", "darkgreen",
+            "darkgrey", "darkkhaki", "darkmagenta", "darkolivegreen", "darkorange",
+            "darkorchid", "darkred", "darksalmon", "darkseagreen", "darkslateblue",
+            "darkslategray", "darkslategrey", "darkturquoise", "darkviolet", "deeppink",
+            "deepskyblue", "dimgray", "dimgrey", "dodgerblue", "firebrick", "floralwhite",
+            "forestgreen", "fuchsia", "gainsboro", "ghostwhite", "gold", "goldenrod",
+            "gray", "greenyellow", "honeydew", "hotpink", "indianred", "indigo",
+            "ivory", "khaki", "lavender", "lavenderblush", "lawngreen", "lemonchiffon",
+            "lightblue", "lightcoral", "lightcyan", "lightgoldenrodyellow", "lightgray",
+            "lightgreen", "lightgrey", "lightpink", "lightsalmon", "lightseagreen",
+            "lightskyblue", "lightslategray", "lightslategrey", "lightsteelblue",
+            "lightyellow", "limegreen", "linen", "magenta", "mediumaquamarine",
+            "mediumblue", "mediumorchid", "mediumpurple", "mediumseagreen",
+            "mediumslateblue", "mediumspringgreen", "mediumturquoise", "mediumvioletred",
+            "midnightblue", "mintcream", "mistyrose", "moccasin", "navajowhite",
+            "navy", "oldlace", "olive", "olivedrab", "orange", "orangered", "orchid",
+            "palegoldenrod", "palegreen", "paleturquoise", "palevioletred", "papayawhip",
+            "peachpuff", "peru", "pink", "plum", "powderblue", "purple", "rebeccapurple",
+            "red", "rosybrown", "royalblue", "saddlebrown", "salmon", "sandybrown",
+            "seagreen", "seashell", "sienna", "silver", "skyblue", "slateblue",
+            "slategray", "slategrey", "snow", "springgreen", "steelblue", "tan",
+            "teal", "thistle", "tomato", "turquoise", "violet", "wheat", "white",
+            "whitesmoke", "yellow", "yellowgreen"
         ];
 
         // 獲取box
@@ -159,8 +189,6 @@
 
         // 初始化讓方塊出來
         changeBox();
-
-
     </script>
 
 </body>
