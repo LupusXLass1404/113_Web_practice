@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Noto Sans TC, sans-serif;
+}
+
+#main {
+    width: 48%;
+    min-width: 375px;
+    background-color: rgb(253, 246, 253);
+    padding: 40px 20px;
+    margin: 0 auto;
+
+}
+
+.container {
+    border-radius: 8px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+form {
+    width: 100%;
+}
+
+.item {
+    width: 100%;
+    /* background-color: aqua; */
+    padding: 20px;
+    /* margin: 20px; */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+}
+
+.img {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    border-radius: 8px;
+}
+
+.info {
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info p:nth-child(1) {
+    padding-bottom: 20px;
+
+}
+
+.inputNum {
+    border-radius: 8px;
+    padding: 4px;
+    width: 60px;
+}
+
+/* 總計 */
+.total {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 64px;
+}
+
+
+
+/* 圖片 */
+.img_1 {
+    background-image: url(./images/1.jpg);
+}
