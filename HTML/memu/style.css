@@ -135,6 +135,7 @@ form {
     border-radius: 8px;
     padding: 4px;
     width: 60px;
+    border: 1px solid #333333;
 }
 
 /* 彈窗 */
