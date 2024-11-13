@@ -1,22 +1,31 @@
 let order = [];
 let chooseItem = '';
 
-
 // 輸出標題列表
 function itemsTitle() {
     let itemsType = [...new Set(items.map(item => item.type))];
-    forEach(ele => {
-
+    let titleList = '';
+    itemsType.forEach(ele => {
+        titleList += `<h2>${ele}</h2>
+        <div class="items-list">
+        <form action="" data-type="${ele}"></form>
+        </div>`;
     })
+    document.getElementById('main-list').innerHTML = titleList;
 
+    itemsType.forEach(ele => {
+        let itemsType = items.filter(item => item.type === ele);
+        itemsPrint(ele, itemsType);
+    })
 }
 
 // 輸出item列表
-let itemsInfo = '';
-function itemsPrint() {
-    let itemsId = document.getElementById('items');
-
-    items.forEach(ele => {
+function itemsPrint(title, itemsType) {
+    console.log(itemsType);
+    // console.log(title + "：" + itemsType);
+    let itemsInfo = '';
+    itemsType.forEach(ele => {
+        console.log(ele);
         itemsInfo += `
         <div class="item" data-item="${ele.name}">
             <div class="img" style="background-image: url(./images/${ele.name}.jpg)";></div>
@@ -37,7 +46,7 @@ function itemsPrint() {
         </div>
         `;
     });
-    itemsId.innerHTML = itemsInfo;
+    document.querySelector(`[data-type="${title}"]`).innerHTML = itemsInfo;
 }
 
 // 給予item點擊事件
@@ -191,7 +200,7 @@ function total() {
 
 // 初始化
 function into() {
-    itemsPrint();
+    itemsTitle()
     clickOrder();
     hide('checkout');
 
