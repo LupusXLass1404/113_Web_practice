@@ -54,6 +54,13 @@ h2 {
     text-indent: 16px;
 }
 
+h3 {
+    padding: 16px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    /* text-indent: 16px; */
+}
+
 .items-list {
     border-radius: 8px;
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
@@ -68,7 +75,7 @@ form {
     width: 100%;
 }
 
-.item {
+.item,.checkout_item {
     width: 100%;
     /* background-color: aqua; */
     padding: 20px;
@@ -76,6 +83,10 @@ form {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
+}
+
+.item{
+    cursor: pointer;
 }
 
 .img {
@@ -88,7 +99,7 @@ form {
     background-color: white;
 }
 
-label {
+.name {
     font-weight: bold;
 }
 
@@ -108,6 +119,11 @@ label {
     color: #8d8d8d;
 }
 
+.fa-circle-plus {
+    font-size: 32px;
+    opacity: 0.3;
+}
+
 .inputNum {
     border-radius: 8px;
     padding: 4px;
@@ -117,7 +133,7 @@ label {
 dialog {
     width: 100%;
     max-width: 768px;
-    height: 80vh;
+    height: 90vh;
     border-radius: 24px;
     padding: 40px;
     margin: auto;
@@ -127,9 +143,56 @@ dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.75);
 }
 
+#orderOptions p {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+}
+#orderOptions label {
+    width: 100%;
+    padding: 8px;
+    vertical-align: middle;
+}
+input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
 /* 總計 */
+
 .total {
     display: flex;
     justify-content: space-between;
     margin: 20px 64px;
+}
+
+/* 按鈕 */
+
+.button {
+    background-color: #b6e887;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.return {
+    font-size: 1rem;
+    width: 120px;
+}
+
+.button:hover {
+    background-color: #a3db73;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.button:active {
+    background-color: #90c961;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(0.95);
 }

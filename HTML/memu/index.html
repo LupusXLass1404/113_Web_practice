@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>天仁喫茶趣</title>
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <script src="https://kit.fontawesome.com/a3ca2244ae.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -30,10 +31,33 @@
                     <!-- 放商品資訊 -->
                 </form>
             </div>
+            <div id="check" class="button">查看購物車</div>
 
+            <dialog id="infoOrder">
+                <div id="orderOptions">
+                    <!-- 選項 -->
+                </div>
+
+                <div class="endOrder button" data-order="true">
+                    加入購物車
+                </div>
+            </dialog>
+
+        </div>
+    </div>
+
+    <div id="checkout" class="container">
+        <div class="main">
+            <div id="return" class="button return">
+                <i class="fa-solid fa-arrow-left"></i> 繼續點餐
+            </div>
+
+            <h2>訂購內容</h2>
+            <div id="checkoutList" class="items-list">
+                <!-- 結帳清單 -->
+            </div>
             <hr>
             <!-- 總計 -->
-            <button id="checkout">購物車</button>
             <div class="total">
                 <p>
                     總計：
@@ -42,45 +66,11 @@
                     $ <span id="cost">0</span>
                 </p>
             </div>
-            <button id="itemOrder">綠抹茶冰沙</button>
-            <dialog id="infoOrder">
-                <div data-item="綠抹茶冰沙">
-                    <h3>Size</h3>
-                    <form>
-                        <p>
-                            <input type="radio" id="s" name="size" value="小杯">
-                            <label for="s">小杯</label>
-                        </p>
-                        <p>
-                            <input type="radio" id="m" name="size" value="中杯">
-                            <label for="m">中杯</label>
-                        </p>
-                        <p>
-                            <input type="radio" id="l" name="size" value="大杯">
-                            <label for="l">大杯</label>
-                        </p>
-                        <p>
-                            <input type="radio" id="xl" name="size" value="超大杯">
-                            <label for="xl">好了啦超大杯</label>
-                        </p>
-                    </form>
-                    <button class="endOrder" data-order="true">加入購物車</button>
-
-                </div>
-
-            </dialog>
-
         </div>
+    </div>
 
-        <div id="checkout" class="container">
-            <div class="main">
-                123
-
-            </div>
-        </div>
-
-        <script src="./js/product.js"></script>
-        <script src="./js/script.js"></script>
+    <script src="./js/product.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
