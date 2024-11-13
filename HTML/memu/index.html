@@ -11,109 +11,41 @@
 </head>
 
 <body>
-    <main id="main">
-        <h2>限定抹茶</h2>
-        <div class="container">
-            <form id="items" action="">
-                <!-- 放商品資訊 -->
-            </form>
+    <div class="container">
+        <div class="banner">
+            <!-- 放橫幅的地方 -->
         </div>
-        <h2>購物車</h2>
-        <hr>
-        <div class="total">
-            <p>
-                總計：
-            </p>
-            <p>
-                $ <span id="cost">0</span>
-            </p>
+
+        <div class="main">
+            <!-- Logo -->
+            <div class="logo"></div>
+
+            <!-- 店名 -->
+            <h1>天仁喫茶趣</h1>
+            <hr>
+            <!-- 商品 -->
+            <h2>限定抹茶</h2>
+            <div class="items-list">
+                <form id="items" action="">
+                    <!-- 放商品資訊 -->
+                </form>
+            </div>
+
+            <hr>
+            <!-- 總計 -->
+            <h2>購物車</h2>
+            <div class="total">
+                <p>
+                    總計：
+                </p>
+                <p>
+                    $ <span id="cost">0</span>
+                </p>
+            </div>
         </div>
-    </main>
 
-    <script>
-        const items = [
-            {
-                name: '綠抹茶冰沙',
-                depiction: '濃厚日式風味的抹茶冰沙，獨特口感推薦給您',
-                cost: '80',
-            },
-            {
-                name: '抹茶冰淇淋奶綠',
-                depiction: '抹茶冰淇淋加上香濃滑順的奶綠，搭配出豐富口感',
-                cost: '90',
-            },
-            {
-                name: '綠抹茶拿鐵',
-                depiction: '抹茶的香氣搭配新鮮鮮奶，絕佳的日式風味',
-                cost: '80',
-            }
-        ];
-
-        let itemsId = document.getElementById('items');
-        let costId = document.getElementById('cost');
-        let costTotal = 0;
-
-
-        let itemsInfo = '';
-        function itemsPrint() {
-            items.forEach(ele => {
-                itemsInfo += `
-                <div class="item">
-                    <div class="img" style="background-image: url(./images/${ele.name}.jpg)";></div>
-                    <div class="info">
-                        <p>
-                            <label for="">${ele.name}</label>
-                        </p>
-                        <p class="depiction">
-                            ${ele.depiction}
-                        </p>
-                        <p class="depiction">
-                        $ ${ele.cost}
-                        </p>
-                    </div>
-                    <div>
-                        <input class="inputNum" type="number" value="0" min="0" data-cost="${ele.cost}">
-                    </div>
-                </div>
-                `;
-
-            });
-            itemsId.innerHTML = itemsInfo;
-        }
-
-        function total(inputClass) {
-            let costTotal = 0;
-            inputClass.forEach(ele => {
-                let valuesNum = ele.value;
-                let itemCost = ele.getAttribute('data-cost');
-                console.log(valuesNum);
-                console.log(itemCost);
-                costTotal += itemCost * valuesNum;
-            })
-            costId.innerHTML = costTotal;
-        }
-
-        // 初始化
-        function into() {
-            itemsPrint();
-
-            let inputClass = [...document.querySelectorAll('.inputNum')]
-            inputClass.forEach(input => {
-                input.addEventListener('input', function () {
-                    total(inputClass);
-                });
-            })
-        }
-
-        into();
-
-
-    </script>
-
-
-    <!-- 首先要有飲料頁面 先做卡片 用物件做資料 可以有數量 可以即實顯示價格 加項： 購物車查看 彈窗 甜度、冰塊、大杯小杯（陣列儲存購物車資料） 地址、樓層、備註。 -->
-
-
+        <script src="./js/product.js"></script>
+        <script src="./js/script.js"></script>
 </body>
 
 </html>
