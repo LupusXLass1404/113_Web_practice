@@ -9,15 +9,21 @@
     width: 48%;
     min-width: 375px;
     background-color: rgb(253, 246, 253);
-    padding: 40px 20px;
+    padding: 40px 40px;
     margin: 0 auto;
 
+}
+
+h2 {
+    padding: 20px 0;
+    font-size: 24px;
+    font-weight: bolder;
 }
 
 .container {
     border-radius: 8px;
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
-    margin: 40px;
+    margin-bottom: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,25 +41,37 @@ form {
     /* margin: 20px; */
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     display: flex;
+    align-items: center;
 }
 
 .img {
     width: 100px;
     height: 100px;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     border-radius: 8px;
+    background-color: white;
+}
+
+label {
+    font-weight: bolder;
 }
 
 .info {
     width: 80%;
-    padding: 20px;
+    padding: 8px 20px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
 
-.info p:nth-child(1) {
-    padding-bottom: 20px;
+.info p {
+    margin-bottom: 8px;
+}
 
+.info .depiction {
+    color: #8d8d8d;
 }
 
 .inputNum {
@@ -67,11 +85,4 @@ form {
     display: flex;
     justify-content: space-between;
     margin: 20px 64px;
-}
-
-
-
-/* 圖片 */
-.img_1 {
-    background-image: url(./images/1.jpg);
 }
