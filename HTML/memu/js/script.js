@@ -2,13 +2,21 @@ let order = [];
 let chooseItem = '';
 
 
+// 輸出標題列表
+function itemsTitle() {
+    let itemsType = [...new Set(items.map(item => item.type))];
+    forEach(ele => {
+
+    })
+
+}
 
 // 輸出item列表
 let itemsInfo = '';
 function itemsPrint() {
     let itemsId = document.getElementById('items');
-    items.forEach(ele => {
 
+    items.forEach(ele => {
         itemsInfo += `
         <div class="item" data-item="${ele.name}">
             <div class="img" style="background-image: url(./images/${ele.name}.jpg)";></div>
@@ -39,36 +47,36 @@ function clickOrder() {
     itemClass.forEach(item => {
         item.onclick = function () {
             document.getElementById("infoOrder").showModal();
-            orderOptions();
             chooseItem = this.getAttribute('data-item');
-            console.log(chooseItem);
+            orderOptions();
+            // console.log(chooseItem);
         }
     })
 }
 
 // 輸出點餐選項
-function orderOptions() {
-    let options = {
-        'size': {
-            'name': 'size',
-            'title': 'Size',
-            'item': ["小杯", "中杯", "大杯", "超大杯"]
-        },
-        'sugar': {
-            'name': 'sugar',
-            'title': '甜度',
-            'item': ["全糖", "半糖", "少糖", "無糖"]
-        },
-        'ice': {
-            'name': 'ice',
-            'title': '冰塊',
-            'item': ["正常", "少冰", "微冰", "去冰"]
-        }
-    };
+function orderOptions(item) {
+    let ele = items.find(i => i.name === chooseItem);
+    let itemInfo = `
+        <div>
+            <div class="img optionImg" style="background-image: url(./images/${ele.name}.jpg)";></div>
+            <div class="info">
+                <p class="name">
+                    ${ele.name}
+                </p>
+                <p class="depiction">
+                    ${ele.depiction}
+                </p>
+                <p class="depiction">
+                一杯 $ ${ele.cost}
+                </p>
+            </div>
+
+        </div>
+    `;
 
     let amount = `<h3>數量</h3>
     <input id="itemAmount" class="inputNum" type="number" value="1" min="1">`;
-
 
     let listOptions = '';
     for (let key in options) {
@@ -88,7 +96,7 @@ function orderOptions() {
         listOptions += `</form>`;
     }
 
-    document.getElementById('orderOptions').innerHTML = amount + listOptions;
+    document.getElementById('orderOptions').innerHTML = itemInfo + amount + listOptions;
 }
 
 // 返回點餐數量
@@ -109,25 +117,29 @@ function orderRadio(name) {
 }
 
 // 關閉彈窗
-document.querySelector('.endOrder').onclick = function () {
-    // 如果是點擊購物車按紐
-    if (this.getAttribute('data-order')) {
-        let itemOrder = {};
-        itemOrder.name = chooseItem;
-        itemOrder.size = orderRadio('size');
-        itemOrder.sugar = orderRadio('sugar');
-        itemOrder.ice = orderRadio('ice');
-        itemOrder.amount = orderAmount();
-        itemOrder.cost = items.find(i => i.name === chooseItem).cost;
-        // console.log('data-order');
-        order.push(itemOrder);
-    }
+endOrderClass = [...document.querySelectorAll('.endOrder')];
 
-    // 關閉彈窗
-    document.getElementById("infoOrder").close();
-    // 重置選擇的商品
-    chooseItem = '';
-}
+endOrderClass.forEach(ele => {
+    ele.onclick = function () {
+        // 如果是點擊購物車按紐
+        if (this.getAttribute('data-order')) {
+            let itemOrder = {};
+            itemOrder.name = chooseItem;
+            itemOrder.size = orderRadio('size');
+            itemOrder.sugar = orderRadio('sugar');
+            itemOrder.ice = orderRadio('ice');
+            itemOrder.amount = orderAmount();
+            itemOrder.cost = items.find(i => i.name === chooseItem).cost;
+            // console.log('data-order');
+            order.push(itemOrder);
+        }
+
+        // 關閉彈窗
+        document.getElementById("infoOrder").close();
+        // 重置選擇的商品
+        chooseItem = '';
+    }
+})
 
 // 查看購物車
 document.getElementById('check').onclick = function () {
@@ -162,7 +174,7 @@ function checkoutList() {
                 </p>
             </div>
             <div>
-                ${ele.cost * ele.amount}
+                $ ${ele.cost * ele.amount}
             </div>
         </div>
         `;

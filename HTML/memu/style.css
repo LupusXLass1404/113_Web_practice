@@ -77,11 +77,10 @@ form {
 
 .item,.checkout_item {
     width: 100%;
-    /* background-color: aqua; */
-    padding: 20px;
-    /* margin: 20px; */
+    padding: 20px 40px 20px 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -97,6 +96,13 @@ form {
     background-position: center;
     border-radius: 8px;
     background-color: white;
+}
+
+.optionImg {
+    /* min-width: 100%; */
+    width: 100%;
+    padding-top: 100%;
+    /* height: auto; */
 }
 
 .name {
@@ -119,9 +125,10 @@ form {
     color: #8d8d8d;
 }
 
-.fa-circle-plus {
+.fa-circle-plus, .fa-circle-xmark {
     font-size: 32px;
     opacity: 0.3;
+    cursor: pointer;
 }
 
 .inputNum {
@@ -130,17 +137,23 @@ form {
     width: 60px;
 }
 
+/* 彈窗 */
 dialog {
     width: 100%;
-    max-width: 768px;
+    max-width: 500px;
     height: 90vh;
     border-radius: 24px;
     padding: 40px;
+    padding-bottom: 8px;
     margin: auto;
 }
 
 dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.75);
+}
+
+#orderOptions .info {
+    padding: 0;
 }
 
 #orderOptions p {
@@ -158,6 +171,14 @@ input[type="radio"] {
     height: 16px;
     vertical-align: middle;
 }
+.xmark {
+    position: sticky;
+    top: 0;
+    float: right;
+    z-index: 1000;
+    padding: 0 12px;
+}
+
 
 /* 總計 */
 
@@ -178,6 +199,8 @@ input[type="radio"] {
     padding: 16px;
     cursor: pointer;
     transition: all 0.3s ease;
+    position: sticky;
+    bottom: 0;
 }
 
 .return {
