@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div id="order" class="container">
         <div class="banner">
             <!-- 放橫幅的地方 -->
         </div>
@@ -33,7 +33,7 @@
 
             <hr>
             <!-- 總計 -->
-            <h2>購物車</h2>
+            <button id="checkout">購物車</button>
             <div class="total">
                 <p>
                     總計：
@@ -41,6 +41,41 @@
                 <p>
                     $ <span id="cost">0</span>
                 </p>
+            </div>
+            <button id="itemOrder">綠抹茶冰沙</button>
+            <dialog id="infoOrder">123
+                <div>
+                    <h3>Size</h3>
+                    <form>
+                        <p>
+                            <input type="radio" id="s" name="size" value="小杯" data-item="綠抹茶冰沙">
+                            <label for="s">小杯</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="m" name="size" value="中杯" data-item="綠抹茶冰沙">
+                            <label for="m">中杯</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="l" name="size" value="大杯" data-item="綠抹茶冰沙">
+                            <label for="l">大杯</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="xl" name="size" value="超大杯" data-item="綠抹茶冰沙">
+                            <label for="xl">好了啦超大杯</label>
+                        </p>
+                    </form>
+                    <button class="endOrder" data-order="true">加入購物車</button>
+
+                </div>
+
+            </dialog>
+
+        </div>
+
+        <div id="checkout" class="container">
+            <div class="main">
+                123
+
             </div>
         </div>
 

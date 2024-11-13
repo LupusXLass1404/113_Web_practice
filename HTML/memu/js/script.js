@@ -1,6 +1,7 @@
 let itemsId = document.getElementById('items');
 let costId = document.getElementById('cost');
 let costTotal = 0;
+let order = [];
 
 let itemsInfo = '';
 function itemsPrint() {
@@ -39,6 +40,37 @@ function total(inputClass) {
     })
     costId.innerHTML = costTotal;
 }
+
+function orderOptions() {
+    let
+}
+
+function checkRadio(name) {
+    // console.log(name);
+    let nameInput = document.querySelector(`input[name="${name}"]:checked`);
+    if (nameInput) {
+        console.log(nameInput.value);
+    } else {
+        console.log('no');
+    }
+}
+
+document.getElementById('itemOrder').onclick = function () {
+    document.getElementById("infoOrder").showModal();
+}
+// document.querySelectorAll('.itemOrder')
+
+document.querySelector('.endOrder').onclick = function () {
+    if (this.getAttribute('data-order')) {
+        // console.log('data-order');
+        checkRadio('size');
+
+
+    }
+    document.getElementById("infoOrder").close();
+}
+
+
 
 // 初始化
 function into() {
