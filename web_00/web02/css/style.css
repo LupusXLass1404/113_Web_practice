@@ -9,22 +9,37 @@
 .box {
     width: 1024px;
     height: 768px;
-    background-color: black;
+    /* background-color: black; */
     margin: 0 auto;
+}
+
+header,
+.aside-header,
+.aside-footer,
+.main-header,
+.main-footer,
+footer {
+    border: 1px solid black;
 }
 
 /* header */
 header {
     width: 100%;
     height: 65px;
-    background-color: lightsalmon;
+    /* background-color: lightsalmon; */
+    border-bottom: 0;
+}
+
+.logo {
+    width: 994px;
+    height: 60px;
 }
 
 /* container */
 .container {
     width: 100%;
     height: calc(100% - 65px - 20px);
-    background-color: darkblue;
+    /* background-color: darkblue; */
     display: flex;
 }
 
@@ -32,43 +47,88 @@ header {
 aside {
     width: 215px;
     height: 100%;
-    background-color: palegoldenrod;
+    /* background-color: palegoldenrod; */
 }
 
 .aside-header {
     width: 100%;
     height: calc(100% - 25px);
-    background-color: paleturquoise;
+    /* background-color: paleturquoise; */
+    border-right: 0;
+    border-bottom: 0;
+}
+
+.menu-title,
+.menu li {
+    font-weight: 500;
+    text-align: center;
+}
+
+.menu-title {
+    font-size: 24px;
+    text-decoration: underline;
+    margin: 8px;
+    color: #f0f;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu li {
+    width: 200px;
+    line-height: 35px;
+    color: #000;
+    font-size: 16px;
+    vertical-align: middle;
+    background: url(../images/menu1.png);
+    margin-top: 4px;
+}
+
+.menu li:hover {
+    background: url(../images/menu2.png);
 }
 
 .aside-footer {
     width: 100%;
     height: 25px;
-    background-color: palevioletred;
+    /* background-color: palevioletred; */
+    border-right: 0;
+    border-bottom: 0;
 }
 
 /* container-right */
 main {
     width: calc(100% - 215px);
     height: 100%;
-    background-color: palegreen;
+    /* background-color: palegreen; */
 }
 
 .main-header {
     width: 100%;
     height: 29px;
-    background-color: papayawhip;
+    /* background-color: papayawhip; */
+    border-bottom: 0;
+}
+
+.marquee {
+    width: 770px;
+    height: 29px;
+    color: #00f;
 }
 
 .main-footer {
     width: 100%;
     height: calc(100% - 29px);
-    background-color: plum;
+    /* background-color: plum; */
+    border-bottom: 0;
 }
 
 /* footer */
 footer {
     width: 100%;
     height: 20px;
-    background-color: lavender;
+    /* background-color: lavender; */
 }
