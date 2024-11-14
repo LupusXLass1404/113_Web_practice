@@ -140,6 +140,11 @@ form {
     border: 1px solid #333333;
 }
 
+#checkoutCost {
+    float: right;
+    opacity: 0.8;
+}
+
 /* ==== 彈窗 ==== */
 dialog {
     width: 100%;

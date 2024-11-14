@@ -21,11 +21,11 @@ function itemsTitle() {
 
 // 輸出item列表
 function itemsPrint(title, itemsType) {
-    console.log(itemsType);
+    // console.log(itemsType);
     // console.log(title + "：" + itemsType);
     let itemsInfo = '';
     itemsType.forEach(ele => {
-        console.log(ele);
+        // console.log(ele);
         itemsInfo += `
         <div class="item" data-item="${ele.name}">
             <div class="img" style="background-image: url(./images/${ele.name}.jpg)";></div>
@@ -141,6 +141,7 @@ endOrderClass.forEach(ele => {
             itemOrder.cost = items.find(i => i.name === chooseItem).cost;
             // console.log('data-order');
             order.push(itemOrder);
+            document.getElementById('checkoutCost').innerHTML = "$ " + total();
         }
 
         // 關閉彈窗
@@ -155,7 +156,7 @@ document.getElementById('check').onclick = function () {
     hide('order');
     show('checkout');
     checkoutList()
-    document.getElementById('cost').innerHTML = total();
+    document.getElementById('totalCost').innerHTML = "$ " + total();
 }
 
 // 返回點餐
