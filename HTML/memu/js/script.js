@@ -224,3 +224,12 @@ function show(id) {
     let getId = document.getElementById(id);
     getId.style.display = "block";
 }
+
+
+// 更新所有商品的總價
+function updateItemTotal(item) {
+    const price = parseInt(item.getAttribute('data-price'));  // 轉換為整數
+    const qty = item.querySelector('.input-qty').value;
+    const total = price * qty;
+    item.querySelector('.total').textContent = `$${Math.round(total)}`;  // 四捨五入為整數
+}

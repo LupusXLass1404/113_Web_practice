@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+/* all */
+.box {
+    width: 1024px;
+    margin: auto;
+}
+
+/* header */
+header {
+    width: 100%;
+    height: 65px;
+    background-color: palegreen;
+}
+
+/* container */
+.container {
+    width: 100%;
+    height: calc(768px - 65px - 20px);
+    background-color: paleturquoise;
+    display: flex;
+}
+
+/* container-left */
+aside {
+    width: 215px;
+    height: 100%;
+    background-color: pink;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.aside-header {
+    width: 100%;
+    /* flex-basis: 100px; */
+    /* height: calc(100% - 25px); */
+    /* flex-direction 主軸長度 item method 通常flexbox都用這個 */
+    flex-basis: calc(100% - 25px);
+    /* height: calc(768px - 65px - 20px - 25px); */
+    background-color: plum;
+}
+
+.aside-footer {
+    width: 100%;
+    height: 25px;
+    background-color: peru;
+}
+
+/* container-right */
+main {
+    width: calc(100% - 215px);
+    height: 100%;
+    background-color: palegoldenrod;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.main-header {
+    width: 100%;
+    height: 29px;
+    background-color: darkcyan;
+}
+
+.main-footer {
+    width: 100%;
+    /* height: calc(768px - 65px - 20px - 29px); */
+    flex-basis: calc(100% - 29px);
+    background-color: darkkhaki;
+}
+
+/* footer */
+footer {
+    width: 100%;
+    height: 25px;
+    background-color: palevioletred;
+}
