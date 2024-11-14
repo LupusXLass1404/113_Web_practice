@@ -8,7 +8,6 @@
     color: #333333;
 }
 
-
 .container {
     max-width: 768px;
     margin: 0 auto;
@@ -22,6 +21,7 @@
     border-radius: 0px 0px 20px 20px;
 }
 
+/* ==== 主要 ==== */
 .main {
     background-color: #fff;
     padding: 32px;
@@ -187,7 +187,6 @@ input[type="radio"] {
 
 
 /* 總計 */
-
 .total {
     display: flex;
     justify-content: space-between;
@@ -195,7 +194,6 @@ input[type="radio"] {
 }
 
 /* 按鈕 */
-
 .button {
     background-color: #b6e887;
     border-radius: 8px;
