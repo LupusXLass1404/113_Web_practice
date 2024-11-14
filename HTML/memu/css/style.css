@@ -140,9 +140,10 @@ form {
     border: 1px solid #333333;
 }
 
-#checkoutCost {
+#checkoutCost,
+#orderCost {
     float: right;
-    opacity: 0.8;
+    opacity: 0.5;
 }
 
 /* ==== 彈窗 ==== */
@@ -174,6 +175,7 @@ dialog::backdrop {
     width: 100%;
     padding: 8px;
     vertical-align: middle;
+    user-select: none;
 }
 
 input[type="radio"] {
