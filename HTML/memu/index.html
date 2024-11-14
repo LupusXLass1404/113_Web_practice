@@ -12,57 +12,60 @@
 </head>
 
 <body>
+    <!-- ====================== 點餐頁面 ====================== -->
     <div id="order" class="container">
-        <div class="banner">
-            <!-- 放橫幅的地方 -->
-        </div>
+        <!-- ==== 橫幅 ==== -->
+        <div class="banner"></div>
 
+        <!-- ==== 主要 ==== -->
         <div class="main">
             <!-- Logo -->
             <div class="logo"></div>
 
             <!-- 店名 -->
             <h1>天仁喫茶趣</h1>
+
             <hr>
-            <!-- 商品 -->
-            <div id="main-list">
-                <h2>限定抹茶</h2>
-                <div class="items-list">
-                    <form id="items" action="" data-type="限定抹茶">
-                        <!-- 放商品資訊 -->
-                    </form>
-                </div>
-            </div>
+
+            <!-- 商品清單 -->
+            <div id="main-list"></div>
+
+            <!-- 購物車按鈕 -->
             <div id="check" class="button">查看購物車</div>
 
-            <dialog id="infoOrder">
-                <div class="xmark">
-                    <i class="fa-solid fa-circle-xmark endOrder"></i>
-                </div>
-
-                <div id="orderOptions">
-                    <!-- 選項 -->
-                </div>
-
-                <div class="endOrder button" data-order="true">
-                    加入購物車
-                </div>
-            </dialog>
 
         </div>
+
+        <!-- ==== 彈窗 ==== -->
+        <dialog id="infoOrder">
+            <!-- 取消點餐 -->
+            <div class="xmark">
+                <i class="fa-solid fa-circle-xmark endOrder"></i>
+            </div>
+
+            <!-- 選項清單 -->
+            <div id="orderOptions"></div>
+
+            <!-- 確認點餐 -->
+            <div class="endOrder button" data-order="true">
+                加入購物車
+            </div>
+        </dialog>
     </div>
 
+    <!-- ====================== 結帳頁面 ====================== -->
     <div id="checkout" class="container">
         <div class="main">
+            <!-- 返回點餐頁面 -->
             <div id="return" class="button return">
                 <i class="fa-solid fa-arrow-left"></i> 繼續點餐
             </div>
 
             <h2>訂購內容</h2>
-            <div id="checkoutList" class="items-list">
-                <!-- 結帳清單 -->
-            </div>
+            <div id="checkoutList" class="items-list"></div>
+
             <hr>
+
             <!-- 總計 -->
             <div class="total">
                 <p>
@@ -75,6 +78,7 @@
         </div>
     </div>
 
+    <!-- JS -->
     <script src="./js/product.js"></script>
     <script src="./js/script.js"></script>
 </body>

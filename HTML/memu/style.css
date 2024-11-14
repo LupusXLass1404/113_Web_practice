@@ -75,7 +75,8 @@ form {
     width: 100%;
 }
 
-.item,.checkout_item {
+.item,
+.checkout_item {
     width: 100%;
     padding: 20px 40px 20px 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -84,7 +85,7 @@ form {
     align-items: center;
 }
 
-.item{
+.item {
     cursor: pointer;
 }
 
@@ -125,7 +126,8 @@ form {
     color: #8d8d8d;
 }
 
-.fa-circle-plus, .fa-circle-xmark {
+.fa-circle-plus,
+.fa-circle-xmark {
     font-size: 32px;
     opacity: 0.3;
     cursor: pointer;
@@ -138,7 +140,7 @@ form {
     border: 1px solid #333333;
 }
 
-/* 彈窗 */
+/* ==== 彈窗 ==== */
 dialog {
     width: 100%;
     max-width: 500px;
@@ -162,16 +164,19 @@ dialog::backdrop {
     display: flex;
     align-items: center;
 }
+
 #orderOptions label {
     width: 100%;
     padding: 8px;
     vertical-align: middle;
 }
+
 input[type="radio"] {
     width: 16px;
     height: 16px;
     vertical-align: middle;
 }
+
 .xmark {
     position: sticky;
     top: 0;
@@ -219,4 +224,9 @@ input[type="radio"] {
     background-color: #90c961;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transform: scale(0.95);
+}
+
+/* 分隔線 */
+hr {
+    border-color: #8d8d8d2a;
 }
