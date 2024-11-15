@@ -117,6 +117,17 @@ main {
     width: 770px;
     height: 29px;
     color: #00f;
+    animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(-70%);
+    }
+
+    100% {
+        transform: translateX(105%);
+    }
 }
 
 .main-footer {
