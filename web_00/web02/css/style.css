@@ -3,7 +3,10 @@
     overflow: hidden;
     padding: 0;
     margin: 0;
+    font-family: '標楷體', sans-serif;
 }
+
+/* ====================== index ====================== */
 
 /* box */
 .box {
@@ -28,6 +31,7 @@ header {
     height: 65px;
     /* background-color: lightsalmon; */
     border-bottom: 0;
+    text-align: center;
 }
 
 .logo {
@@ -94,9 +98,13 @@ aside {
 .aside-footer {
     width: 100%;
     height: 25px;
+    line-height: 25px;
+    color: #000;
+    font-size: 16px;
     /* background-color: palevioletred; */
     border-right: 0;
     border-bottom: 0;
+    text-align: center;
 }
 
 /* container-right */
@@ -113,11 +121,12 @@ main {
     border-bottom: 0;
 }
 
-.marquee {
+marquee {
+    font-size: 24px;
     width: 770px;
     height: 29px;
     color: #00f;
-    animation: marquee 10s linear infinite;
+    /* animation: marquee 10s linear infinite; */
 }
 
 @keyframes marquee {
@@ -137,9 +146,114 @@ main {
     border-bottom: 0;
 }
 
+.main-footer iframe {
+    width: 100%;
+    height: 100%;
+}
+
 /* footer */
 footer {
     width: 100%;
     height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    text-align: center;
     /* background-color: lavender; */
+}
+
+/* 分頁背景圖片 */
+.bgimg {
+    background-image: url(../images/0101.jpg);
+}
+
+/* ====================== main.html ====================== */
+.main-container {
+    color: #0000FF;
+    font-size: 24px;
+    text-align: center;
+    margin: 16px;
+    font-style: oblique;
+}
+
+.main-container img {
+    width: 250;
+    height: 250px;
+    margin-bottom: 48px;
+}
+
+/* ====================== nav ====================== */
+nav>* {
+    text-align: center;
+    margin-top: 8px;
+}
+
+nav h2 {
+    color: #f00;
+    font-size: 18px;
+}
+
+nav table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+/* ====================== history ====================== */
+.history-container p {
+    color: #f00;
+    font-size: 16px;
+    margin: 8px 24px;
+    white-space: pre-line;
+}
+
+/* ====================== event ====================== */
+.event-container main {
+    width: 100%;
+}
+
+.event-container #event-date {
+    width: 100%;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.event-container .content td {
+    padding-left: 16px;
+    white-space: pre-line;
+}
+
+.event-container #t0 {
+    color: #800000;
+}
+
+.event-container #t1 {
+    color: #0000FF;
+}
+
+.event-container #t2 {
+    color: #FF0000;
+}
+
+.event-container #t3 {
+    color: #00FF00;
+}
+
+.event-container #t4 {
+    color: #000000;
+}
+
+/* ====================== learning ====================== */
+.learning-container h2 {
+    color: #00FFFF;
+}
+
+.learning-container main {
+    width: 100%;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.learning-container main a {
+    margin-bottom: 24px;
 }
