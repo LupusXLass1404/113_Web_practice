@@ -9,7 +9,6 @@
         href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAb1BMVEVHcEwNERW6NIaRJnFkIUzTPJDSNY7fMZvdM5zRNozUNI3dOJmZLG/PN4zfM5jfMZbQNozXNI7RNovTNY3SNY3TN48UDRXTNo/RNovSNYzeMJVfIUbSNYzQN4oTERjQNYvdNJfeMpUAAACEJGCrMHPigJ3CAAAAJXRSTlMACR81F0F2mYh/UixBibjR5u/OsKVrIGD82+EtupoyxMn/XW6gggs7jQAAAV1JREFUeAG1ktFygyAQRaPRVTAowCJgdsW0/f9vLKQdp830teeBlzN7Zy9w+X+a9lro/jJN28MwjkJOXfPqbmpetNHWIQ6+/eXW4HSMRutktdlmmH4M31UyhCxAuaQtDsswnZG7ysRCKIByMCIds79/y50T9W3gnMn5dhIpgZjDl+tUwhCEc8xlFqTEDLyNzTO0d0lOLsYsQpAYnQyCj22Yql09sww5aksup7Kyk9ItOIa1bipAAhI5RKSkzcP07bIEGO9PGXpFrMa3tfB2PI591ZsMp2TreHxWW+fHsq9pOaXwinTC0NZa82OT03x4EFV2gV3wOmoEeH//MMZ5ORINoatVJkyhpxiTLcuYSKC4JNUq1YJ1ICHrWMgqeDIpHb66wi5y6cZWa23ZezSlK+zng3lKiZgVM9YAM/T1Bk7riAUACLQ6ZXF7+T6TBPVEyLVpLi9011vleu8u/8wnZCMeglYZ+9sAAAAASUVORK5CYII=">
     <link href="https://fonts.googleapis.com/css2?family=Itim&family=Noto+Sans+TC:wght@100..900&display=swap"
         rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
         * {
             box-sizing: border-box;
@@ -198,18 +197,20 @@
 
 
     <script>
+        // !==== 因為我原本是寫 jq 所以我練習改回js ====!
+
         // 初始化
         function init() {
             // 商品導入
-            $('#menu').html(menuList());
+            document.getElementById('menu').innerHTML = menuList();
 
             // 監聽事件
             event();
 
             // (♡˙︶˙♡)
-            $('#sp').on('click', function () {
+            document.getElementById('sp').addEventListener('click', function () {
                 alert(`ヾ(◎´・ω・｀)ノ`);
-            });
+            })
         }
 
         // 生成商品列表
@@ -231,38 +232,47 @@
 
         // 給予監聽事件
         function event() {
-            $('.item-botton').one('click', function () {
-                // console.log(this);
-                let thisItem = $(this).closest('.item');
-                // console.log(item);
+            const bottonClass = [...document.querySelectorAll('.item-botton')];
 
-                // 找到商品名
-                let name = thisItem.find('.item-name').text();
-                // console.log(name);
+            bottonClass.forEach(ele => {
+                ele.addEventListener('click', function () {
+                    let thisItem = this.closest('.item');
+                    // console.log(thisItem);
 
-                // 找到商品價格
-                let cost = item.find(i => i.name == name).cost;
+                    // 找到商品名
+                    let name = thisItem.querySelector('.item-name').textContent;
+                    console.log(name);
 
-                // 價格打八折
-                let saleCalc = cost * 0.8;
+                    // 找到商品價格
+                    let cost = item.find(i => i.name == name).cost;
+                    // console.log(cost);
 
-                // 將尾數改成9
-                let saleCost = saleCalc.toString().slice(0, -1) + '9';
+                    // 價格打八折
+                    let saleCalc = cost * 0.8;
 
-                // 將原價加上CSS
-                thisItem.find('.original').attr('class', "originalSale");
+                    // 將尾數改成9
+                    let saleCost = saleCalc.toString().slice(0, -1) + '9';
+                    // console.log(saleCost);
 
-                // 輸出優惠價格
-                thisItem.find('.sale').html(`$${saleCost}`);
+                    // 將原價加上CSS
+                    let original = thisItem.querySelector('.original');
+                    // console.log(original);
+                    original.setAttribute('class', "originalSale")
 
-                // 將優惠按鈕變成購買
-                thisItem.find('.item-botton').html(`購買`);
-                thisItem.find('.item-botton').css('background', "#69400C");
+                    // 輸出優惠價格
+                    let sale = thisItem.querySelector('.sale');
+                    sale.innerHTML = `$${saleCost}`;
 
-                // 彈出購買資訊
-                $(this).on('click', function () {
-                    alert(`感謝您的購買！\n總計：${saleCost}元。\n三天後「${name}」會送到您的宅邸！`);
-                });
+                    // 將優惠按鈕變成購買
+                    let botton = thisItem.querySelector('.item-botton');
+                    botton.innerHTML = '購買';
+                    botton.style.background = '#69400C';
+
+                    // 彈出購買資訊
+                    this.addEventListener('click', function () {
+                        alert(`感謝您的購買！\n總計：${saleCost}元。\n三天後「${name}」會送到您的宅邸！`);
+                    });
+                }, { once: true });
             })
         }
 
@@ -287,7 +297,6 @@
                 'img': "https://shop.cakenobel.com.tw//Images/product/0101111-2.jpg",
             },
         ]
-
         // 進行初始化 
         init();
     </script>
