@@ -5,23 +5,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
         #box {
             width: 300px;
             height: 300px;
         }
+
+        .bg-blue {
+            background-color: lightblue;
+        }
+
+        .bg-green {
+            background-color: lightgreen;
+        }
+
+        .bg-pink {
+            background-color: lightpink;
+        }
     </style>
 </head>
 
 <body>
-    <div id="box"></div>
+    <div id="box" class="bg-blue"></div>
     <script>
         // Js順序
         // 1. function
         // 2. 宣告
         // 3. 綁定
+        let box = document.getElementById('box');
 
+        // box.addEventListener('click', function () {
+        //     console.log('box click ok')
+        // })
 
+        // $('#box').on('click', function () {
+        //     $(this).attr('class', 'bg-pink');
+        // })
+
+        // $('#box').on('mouseenter', function () {
+        //     $(this).attr('class', 'bg-green');
+        // })
+
+        // $('#box').on('mouseleave', function () {
+        //     $(this).attr('class', 'bg-blue');
+        // })
+
+        $('#box').on('click mouseenter mouseleave', function (event) {
+            if (event.type === 'click') {
+                $(this).attr('class', 'bg-pink');
+            } else if (event.type === 'mouseenter') {
+                $(this).attr('class', 'bg-green');
+            } else if (event.type === 'mouseleave') {
+                $(this).attr('class', 'bg-blue');
+            }
+        });
 
     </script>
 

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>諾貝爾奶凍</title>
+    <link rel="icon" type="image/x-icon"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAb1BMVEVHcEwNERW6NIaRJnFkIUzTPJDSNY7fMZvdM5zRNozUNI3dOJmZLG/PN4zfM5jfMZbQNozXNI7RNovTNY3SNY3TN48UDRXTNo/RNovSNYzeMJVfIUbSNYzQN4oTERjQNYvdNJfeMpUAAACEJGCrMHPigJ3CAAAAJXRSTlMACR81F0F2mYh/UixBibjR5u/OsKVrIGD82+EtupoyxMn/XW6gggs7jQAAAV1JREFUeAG1ktFygyAQRaPRVTAowCJgdsW0/f9vLKQdp830teeBlzN7Zy9w+X+a9lro/jJN28MwjkJOXfPqbmpetNHWIQ6+/eXW4HSMRutktdlmmH4M31UyhCxAuaQtDsswnZG7ysRCKIByMCIds79/y50T9W3gnMn5dhIpgZjDl+tUwhCEc8xlFqTEDLyNzTO0d0lOLsYsQpAYnQyCj22Yql09sww5aksup7Kyk9ItOIa1bipAAhI5RKSkzcP07bIEGO9PGXpFrMa3tfB2PI591ZsMp2TreHxWW+fHsq9pOaXwinTC0NZa82OT03x4EFV2gV3wOmoEeH//MMZ5ORINoatVJkyhpxiTLcuYSKC4JNUq1YJ1ICHrWMgqeDIpHb66wi5y6cZWa23ZezSlK+zng3lKiZgVM9YAM/T1Bk7riAUACLQ6ZXF7+T6TBPVEyLVpLi9011vleu8u/8wnZCMeglYZ+9sAAAAASUVORK5CYII=">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Noto+Sans+TC:wght@100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            color: #69400C;
+            background-color: #FFE5CB;
+            font-family: "Itim", "Noto Sans TC", serif;
+            /* overflow: hidden; */
+        }
+
+        .wrapper {
+            max-width: 1200px;
+            height: 100vh;
+            margin: auto;
+            padding: 20px;
+
+        }
+
+
+        /* ====================== header ====================== */
+        header {
+            margin-bottom: 24px;
+        }
+
+        /* ====================== container ====================== */
+        .container main {
+            width: 100%;
+            /* background-color: lightgreen; */
+            display: flex;
+            /* flex-direction: ; */
+
+            background-color: #FEF7E7;
+            border-radius: 32px;
+            padding: 20px;
+        }
+
+        #menu {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item {
+            width: calc(100% / 3);
+            background-color: #fff;
+            border: 1px solid #69410c3a;
+            border-radius: 32px;
+            padding: 16px;
+            margin: 20px;
+            box-shadow: 1px 2px 2px #69410c21;
+        }
+
+        .item * {
+            margin-bottom: 4px;
+
+        }
+
+        .item-img {
+            width: 100%;
+            border-radius: 32px;
+        }
+
+        .item-depiction {
+            opacity: 0.5;
+        }
+
+        .item-cost {
+            font-size: 2rem;
+        }
+
+        .sale {
+            color: #F76B86;
+        }
+
+        .originalSale {
+            opacity: 0.5;
+            text-decoration: line-through;
+            font-size: 1.2rem;
+        }
+
+        .item-botton {
+            width: 100%;
+            color: #fff;
+            background-color: #F76B86;
+            border-radius: 16px;
+            text-align: center;
+            letter-spacing: 8px;
+            padding: 16px;
+            margin: auto;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.1s;
+            cursor: pointer;
+        }
+
+        .item-botton:hover {
+            background-color: #bb4343;
+        }
+
+        .item-botton:active {
+            transform: scale(0.9);
+        }
+
+        .red {
+            color: red;
+        }
+
+        /* ====================== footer ====================== */
+        footer {
+            width: 100vw;
+            color: #ffffffd4;
+            background-color: #69400C;
+            text-align: center;
+            padding: 8px;
+            position: fixed;
+            bottom: 0;
+        }
+
+        footer span {
+            display: inline-block;
+            animation: shake 0.5s ease-in-out infinite;
+            cursor: pointer;
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            75% {
+                transform: translateX(5px);
+            }
+        }
+
+        /* ====================== RWD ====================== */
+
+        @media (max-width: 996px) {
+            #menu {
+                flex-wrap: wrap;
+                padding-bottom: 40px;
+            }
+
+            .item {
+                width: calc((100% - 100px) / 2);
+
+            }
+        }
+
+        @media (max-width: 767px) {
+            .item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <header>
+            <!-- LOGO -->
+            <img src="https://www.cakenobel.com.tw/templates/logistix/images/logos/logo1.png" alt="">
+        </header>
+
+        <div class="container">
+            <!-- 商品位置 -->
+            <main id="menu"></main>
+        </div>
+    </div>
+
+    <!-- 頁尾 -->
+    <footer>
+        <p>
+            <span id="sp"> ヽ(=^･ω･^=)丿<*))>>=< (=´ω`=) </span>
+        </p>
+    </footer>
+
+
+    <script>
+        // 初始化
+        function init() {
+            $('#menu').html(menuList());
+            event();
+        }
+
+        // 生成商品列表
+        function menuList() {
+            let list = '';
+            item.forEach((ele, index) => {
+                list += `
+                <div class="item">
+                    <img class="item-img" src="${ele.img}" alt="">
+                    <h2 class="item-name">${ele.name}</h2>
+                    <p class="item-depiction">${ele.depiction}</p><br>
+                    <div class="item-cost"><span class="sale"></span> <span class="original">$${ele.cost}</span></div>
+                    <div class="item-botton">獲得優惠價</div>
+                </div>
+                `
+            });
+            return list;
+        }
+
+        // 給予監聽事件
+        function event() {
+            $('.item-botton').one('click', function () {
+                // console.log(this);
+                let thisItem = $(this).closest('.item');
+                // console.log(item);
+
+                // 找到商品名
+                let name = thisItem.find('.item-name').text();
+                // console.log(name);
+
+                // 找到商品價格
+                let cost = item.find(i => i.name == name).cost;
+
+                // 價格打八折
+                let saleCalc = cost * 0.8;
+
+                // 將尾數改成9
+                let saleCost = saleCalc.toString().slice(0, -1) + '9';
+
+                // 將原價加上CSS
+                thisItem.find('.original').attr('class', "originalSale");
+
+                // 輸出優惠價格
+                thisItem.find('.sale').html(`$${saleCost}`);
+
+                // 將優惠按鈕變成購買
+                thisItem.find('.item-botton').html(`購買`);
+                thisItem.find('.item-botton').css('background', "#69400C");
+                $(this).on('click', function () {
+                    alert(`感謝您的購買！\n總計：${saleCost}元。\n三天後「${name}」會送到您的宅邸！`);
+                });
+            })
+        }
+
+        $('#sp').on('click', function () {
+            alert(`ヾ(◎´・ω・｀)ノ`);
+        });
+
+        // 商品資訊
+        const item = [
+            {
+                'name': "日式芋頭奶凍",
+                'depiction': "嚴選新鮮現採大甲上等芋頭，慢慢的享受精心烘烤出芋頭餡的香濃情味。",
+                'cost': "220",
+                'img': "https://shop.cakenobel.com.tw//Images/product/0101051-2.jpg",
+            },
+            {
+                'name': "日式草莓奶凍",
+                'depiction': "最新鮮的高山草莓，飄著粒粒香甜的滋味，舞動著甜美幸福的感覺。",
+                'cost': "280",
+                'img': "https://shop.cakenobel.com.tw//Images/product/0101041-2.jpg",
+            },
+            {
+                'name': "日式巧克力奶凍",
+                'depiction': "濃郁柔順的巧克力，結合微甜不膩的奶凍，低糖低脂的貼心搭配。",
+                'cost': "240",
+                'img': "https://shop.cakenobel.com.tw//Images/product/0101111-2.jpg",
+            },
+        ]
+
+        // 進行初始化 
+        init();
+    </script>
+</body>
+
+</html>
