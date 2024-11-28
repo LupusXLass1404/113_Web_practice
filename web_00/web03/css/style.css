@@ -169,6 +169,10 @@ footer {
     color: #f00;
 }
 
+#learning-container .common-nav h2 {
+    color: #0ff;
+}
+
 /* history */
 #history-container p {
     color: #f00;
@@ -190,11 +194,42 @@ footer {
 
 }
 
+#event-container table tr td {
+    white-space: pre-line;
+}
+
+#event-0 {
+    color: #800000;
+}
+
+#event-1 {
+    color: #00f;
+}
+
+#event-2 {
+    color: #f00;
+}
+
+#event-3 {
+    color: #0f0;
+}
+
+#event-4 {
+    color: 000;
+}
 
 
 /* learning */
-#learning-container p {
-    color: #f00;
-    font-size: 16px;
-    white-space: pre-line;
+#learning-container main {
+    height: 80vh;
+    color: #00f;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+#learning-container .item:hover {
+    background-color: lightblue;
 }
