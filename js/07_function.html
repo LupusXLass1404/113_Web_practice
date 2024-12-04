@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: #fec2c6;
+            color: #630508;
+        }
+
+        .box {
+            width: 100%;
+            height: 80%;
+            /* background-color: aqua; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .container {
+            background-color: rgb(255, 255, 255);
+            box-shadow: 2px 2px 5px rgb(91, 93, 101);
+            border-radius: 16px;
+            padding: 40px;
+        }
+
+        .cent {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            min-width: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box">
+        <div class="container">
+            <form id="itemList" action="">
+
+            </form>
+            <div clss="cent">
+                <button id="numAdd">增加項目</button>
+                <button id="numDec">減少項目</button>
+                <button class="cal">+</button>
+                <button class="cal">-</button>
+                <button class="cal">*</button>
+                <button class="cal">/</button>
+                <button id="numSumX10">總計x10</button>
+            </div>
+            <div id="numSum"></div>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+            function calc(cal) {
+                const values = getValue();
+
+                let result = values[0];
+
+
+                $.each(values, function (index, value) {
+                    if (index != 0) {
+                        result = result + cal + parseInt(value);
+                    }
+                });
+                // console.log(typeof result)
+
+                return result;
+            }
+
+            function sum() {
+                const values = getValue();
+
+                let total = 0;
+                // console.log(values);
+                $.each(values, function (index, value) {
+                    total += parseInt(value);
+                });
+                return total
+            }
+
+            function sumX10() {
+                return sum() * 10;
+            }
+
+            function getValue() {
+                return $('.num').map(function () {
+                    return $(this).val();
+                }).get();
+            }
+
+            function itemList(itemNum) {
+                let itemInput = '';
+                for (i = 0; i < itemNum; i++) {
+                    itemInput += `
+                    <div>
+                        <input class="num" type="number" value="${(i + 1) * 10}">
+                    </div>
+                    `
+                }
+                $('#itemList').html(itemInput);
+            }
+            // console.log(getValue());
+
+            let item = 2;
+            itemList(item);
+
+            // $('#sum').click(function () {
+            //     $('#numSum').html(`${sum()}`);
+            //     // console.log(sum());
+            // });
+
+            $('.cal').click(function () {
+                let cal = $(this).text();
+                console.log(calc(cal));
+                $('#numSum').html(`${calc(cal)}=${eval(calc(cal))}`)
+
+            });
+
+            $('#numSumX10').click(function () {
+                $('#numSum').html(`${sum()} * 10 = ${sumX10()}`)
+            });
+
+            $('#numAdd').click(function () {
+                // console.log('123');
+                item += 1;
+                console.log(item);
+                itemList(item);
+            });
+            $('#numDec').click(function () {
+                item -= 1;
+                itemList(item);
+            });
+
+        });
+
+
+    </script>
+
+</body>
+
+</html>

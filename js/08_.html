@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隨機動畫效果</title>
+    <style>
+        /* 基本樣式設定 */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transition: all 1s ease;
+            position: relative;
+        }
+
+        /* 動畫效果 */
+        .scale {
+            transform: scale(2);
+        }
+
+        .rotate {
+            transform: rotate(45deg);
+        }
+
+        .color-change {
+            background-color: #3498db;
+        }
+
+        .burn {
+            animation: burnAnimation 1s forwards;
+        }
+
+        .shatter {
+            animation: shatterAnimation 1s forwards;
+        }
+
+        /* 燃燒動畫 */
+        @keyframes burnAnimation {
+            0% {
+                background-color: red;
+                transform: scale(1);
+            }
+
+            50% {
+                background-color: yellow;
+                transform: scale(1.5);
+            }
+
+            100% {
+                background-color: black;
+                transform: scale(2);
+            }
+        }
+
+        /* 破碎動畫 */
+        @keyframes shatterAnimation {
+            0% {
+                width: 100px;
+                height: 100px;
+                transform: rotate(0deg);
+            }
+
+            50% {
+                width: 0;
+                height: 0;
+                opacity: 0;
+            }
+
+            100% {
+                width: 0;
+                height: 0;
+                opacity: 0;
+                transform: rotate(180deg);
+            }
+        }
+
+        /* 旋轉的基本動畫 */
+        @keyframes rotateAnimation {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="box"></div>
+
+    <script>
+        const box = document.getElementById('box');
+
+        const animations = [
+            'scale', // 放大縮小
+            'rotate', // 旋轉
+            'color-change', // 改變顏色
+            'burn', // 燃燒效果
+            'shatter' // 破碎效果
+        ];
+
+        function getRandomAnimation() {
+            const randomIndex = Math.floor(Math.random() * animations.length);
+            return animations[randomIndex];
+        }
+
+        function applyRandomAnimation() {
+            const animation = getRandomAnimation();
+
+            // 清除之前的動畫類別
+            box.classList.remove(...animations);
+
+            // 新增隨機的動畫效果
+            box.classList.add(animation);
+
+            // 動畫後可能需要一些額外的動作來清除狀態
+            if (animation === 'shatter') {
+                setTimeout(() => {
+                    box.style.width = '100px';
+                    box.style.height = '100px';
+                    box.style.opacity = 1;
+                }, 1000); // 恢復破碎後的盒子
+            }
+        }
+
+        setInterval(applyRandomAnimation, 2000); // 每 3 秒換一次動畫
+    </script>
+
+</body>
+
+</html>
