@@ -4,29 +4,356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>爭鮮迴轉壽司</title>
+    <link rel="icon" type="image/x-icon"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAABFFBMVEVHcExdMQAAAAAkIRwAAAABBgcAAAAAAAAAAAAAAAAAAAAAAAQAAABGQjs/IgMAAAAbCwYACxQAAAAmBgDxgAD///7rpmD/++///vnymkP//fX/+efwkTLtrGn/783zhADxljyVj4X/9OH+6cj4jRf4hwD0sGrwplzvhhKel4v83cXi4+Db18/idgD86tXDilLEawf68+r5yrF1cGnLs5l4Z1L8xKfsggn917i4ZgysWwDzoU/Sx7mfVgKrf1HCfjnMp4Tvm0iIhH5eWE6EfHLi0bx2QQbp2Mbzl3bJcRK5trGpbjP2pIXm3tG0rJ/xjihxTCbveADgnlyfhGfq27/89OfUkU/UjEWAQgDJkF3ZhDDVybL+hD93AAAAFHRSTlMA/RD3Kc8gP15PjJ8G89h00bcz5KaT1OcAAAEYSURBVCiR3dHHUsNADAZgOy5xHNJgvevee2Kn92p67533fw+cDAwJw4Er/NdvVtJKGPYvQ+YYJrf9k2Qr19N6/aRx1i3nvhFdniW2ewUERdCceSG7bqVnT/YVAKAA+hDq9jT/ZZWhkIDUPBnIig8S6L3ubH0Y9agpQBeAPY4ieKO5MvA9iC87Z1gcaqk8vXQmtWq1WpssGrrrg/EMZ7Bi30lxvoglJPIcx4noQXqrR67s2EUs39BuR3eWal4a/BL507YUq/f4aHiYFmbyLGOoYeuotnrJNy96A0ul6OznSIQ1OA4RarbCWETmeU/trv2UJjqWmTZFJi8i6SAgNraAlai9fSMIjN12gWI3aZUMSZJ05hcH+ot5B0FnIu95gG90AAAAAElFTkSuQmCC">
 
     <style>
-        #box {
-            width: 300px;
-            height: 300px;
-            background-color: lightblue;
-            margin-top: 30px;
-            /* display: block; */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: "Noto Sans TC", serif;
+        }
+
+        body {
+            background-color: #F7F3EA;
+            color: #3f3a39;
+        }
+
+        .container {
+            max-width: 1200px;
+            /* background-color: lightblue; */
+            margin: auto;
+            display: flex;
+            position: relative;
+        }
+
+        /* header */
+        header {
+            background-color: #C7BAA6;
+            text-align: center;
+            padding: 8px;
+        }
+
+        header ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+        }
+
+        header ul a {
+            padding: 16px;
+            display: block;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        header ul a:hover {
+            background-color: #948268;
+        }
+
+        /* ============== 菜單 ============== */
+        main {
+            width: 65%;
+            /* background-color: aqua; */
+        }
+
+        .memu {
+            width: 100%;
+        }
+
+        .menuImg {
+            width: 160px;
+        }
+
+        .menuNum {
+            width: 40px;
+        }
+
+
+        table {
+            border-collapse: collapse;
+            margin: 16px;
+        }
+
+        th {
+            padding: 8px;
+        }
+
+        th,
+        td {
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        /* ============== 側邊 ============== */
+        aside {
+            width: 35%;
+            /* background-color: gold; */
+            display: flex;
+            position: fixed;
+            right: 0;
+        }
+
+        .line {
+            width: 1px;
+            height: 30vh;
+            background-color: rgba(0, 0, 0, 0.166);
+            margin: 16px;
+        }
+
+        .total {
+            padding: 16px;
+        }
+
+        .priceList {
+            list-style: none;
+        }
+
+        .priceList li {
+            width: 160px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.166);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            color: #fff;
+            width: 100%;
+            padding: 8px;
+            background-color: #E95529;
+            border: 0px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* ============== footer ============== */
+        footer {
+            background-color: #534640;
+            color: #fff;
+            padding: 12px;
+            font-size: 12px;
+            text-align: center;
+            margin-top: 32px;
         }
     </style>
 </head>
 
 <body>
 
+    <header>
+        <a href="https://www.sushiexpress.com.tw/sushi-express/index">
+            <img src="https://www.sushiexpress.com.tw/img/eatin/eatin_logo.png?20221116" alt="">
+        </a>
+        <ul>
+            <li><a href="#" style="color: #3f3a39;">菜單</a></li>
+            <li><a href="https://www.google.com/maps/search/%E7%88%AD%E9%AE%AE/@25.0337197,121.4327502,14z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MTIwOC4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank">門市資訊</a>
+            </li>
+        </ul>
+    </header>
+
+    <!-- container -->
+    <div id="container" class="container">
+        <main>
+            <table id="memu" class="memu">
+                <!-- 商品列表 -->
+            </table>
+        </main>
+
+        <aside>
+            <div class="line"></div>
+            <div class="total">
+                <h3>購物車總計</h3>
+                <hr>
+
+                <ul class="priceList">
+                    <li>小計： <span id="total">$0</span></li>
+                    <li>打折： <span id="saleTotal">無</span></li>
+                    <li>總計： <span id="finalTotal">$0</span></li>
+                </ul>
+                <br>
+                <button id="checkout">結帳</button>
+                <br><br>
+                <button id="sale">獲得特價</button>
+
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- <button id="checkout" style="width: 100px;">TOP</button> -->
+
+    <footer> © ฅ( ˘•ω•˘ )ฅ 2024 FishCat. All Rights Reserved. ฅ^•ﻌ•^ฅ </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
+        // 商品物件
+        const item = [
+            {
+                'name': "玉子燒",
+                'en_name': "Tamagoyaki",
+                'price': "30",
+                'img': "https://www.sushiexpress.com.tw/images/Product/4851_s.png",
+            },
+            {
+                'name': "烤鮭魚肚",
+                'en_name': "Grilled Salmon Belly",
+                'price': "30",
+                'img': "https://www.sushiexpress.com.tw/images/Product/6458_s.png",
+            },
+            {
+                'name': "極鮮鮪魚",
+                'en_name': "Fresh Tuna Sushi",
+                'price': "40",
+                'img': "https://www.sushiexpress.com.tw/images/Product/6832_s.png",
+            },
+            {
+                'name': "蒜香醬旗魚",
+                'en_name': "Garlic Swordfish",
+                'price': "30",
+                'img': "https://www.sushiexpress.com.tw/images/Product/4836_s.png",
+            },
+            {
+                'name': "明太子比目魚",
+                'en_name': "Pollock Roe Halibut",
+                'price': "30",
+                'img': "https://sushiexpress.com.tw/images/Product/7385_s.png",
+            },
+            {
+                'name': "小龍蝦沙拉",
+                'en_name': "Crawfish Salad",
+                'price': "30",
+                'img': "https://www.sushiexpress.com.tw/images/Product/3922_s.png",
+            },
+            {
+                'name': "蝦味魚卵",
+                'en_name': "Fish Roe Gunkan",
+                'price': "30",
+                'img': "https://www.sushiexpress.com.tw/images/Product/3924_s.png",
+            },
+            {
+                'name': "明太子甜蝦",
+                'en_name': "Sweet Shrimp w／ Pollock Roe",
+                'price': "40",
+                'img': "https://www.sushiexpress.com.tw/images/Product/6432_s.png",
+            },
+            {
+                'name': "干貝鮭魚子",
+                'en_name': "Scallop＆Salmon Roe",
+                'price': "40",
+                'img': "https://www.sushiexpress.com.tw/images/Product/6520_s.png",
+            },
+            {
+                'name': "極鮮鮪魚生魚片",
+                'en_name': "Fresh Tuna Sashimi",
+                'price': "40",
+                'img': "https://www.sushiexpress.com.tw/images/Product/6833_s.png",
+            },
+            {
+                'name': "極鮮鮭魚生魚片",
+                'en_name': "Salmon Sashimi",
+                'price': "60",
+                'img': "https://www.sushiexpress.com.tw/images/Product/4637_s.png",
+            }
+        ];
 
+        // 產生商品列表
+        function memuList() {
+            const memuTitle = `<tr>
+                    <th colspan=2>商品</th>
+                    <th>價格</th>
+                    <th>數量</th>
+                    <th>總計</th>
+                </tr>`;
+            let memuTable = "";
 
+            item.forEach(e => {
+                memuTable += `
+                    <tr data-item="${e.name}">
+                        <td><img class="menuImg" src="${e.img}"></td>
+                        <td>${e.name}<br>${e.en_name}</td>
+                        <td>$${e.price}</td>
+                        <td><input class="menuNum" type="number" name="" value="0" min="0"></td>
+                        <td class="menuTotal">$0</td>
+                    </tr>`;
+            });
+            $('#memu').html(memuTitle + memuTable);
+        }
+
+        // 綁定所有商品按鈕
+        function memuInput() {
+            $('.menuNum').change(function () {
+                const itemMenu = $(this).closest('tr');
+                const itemNum = $(this).val();
+                const itemData = itemMenu.data('item');
+                const itemPrice = item.find(e => e.name == itemData).price;
+                // console.log(itemPrice);
+                $(this).closest('.item');
+
+                let itemTotal = itemNum * itemPrice;
+
+                itemMenu.find('.menuTotal').text(`$${itemTotal}`);
+                total();
+            })
+        }
+
+        // 計算所有商品總價
+        function total() {
+            let priceTotal = 0;
+            $('.menuTotal').each(function () {
+                let price = $(this).text().replace('$', '');
+                priceTotal += parseFloat(price);
+            });
+            // console.log(priceTotal);
+
+            salePrint(priceTotal);
+            $('#total').html(`$${priceTotal}`);
+            return priceTotal;
+        }
+
+        // 計算特價
+        function salePrint(priceTotal) {
+            let finalTotal = Math.floor(priceTotal / 10 * priceSale);
+            $('#finalTotal').html(`$${finalTotal}`)
+        }
+
+        // 初始化
+        function init() {
+            memuList();
+            memuInput();
+        }
+
+        // 初始化
+        init();
+
+        $('#checkout').click(function () {
+            if (total() == 0) {
+                alert(`您沒有添加任何東西到購物車！請添加一些商品。`);
+            } else {
+                console.log('12313')
+                let finalTotal = $('#finalTotal').text();
+                alert(`總共：${finalTotal}元！謝謝惠顧！`);
+            }
+        })
+
+        let priceSale = 10;
+        $('#sale').click(function () {
+            if (priceSale == 0) {
+                $('.container').html('今日公休。<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>因為被客人搶劫。');
+                alert(`大哥，你不如去搶劫吧。`);
+            } else {
+                priceSale -= 1;
+                $('#saleTotal').html(`${priceSale}折`);
+                salePrint(total());
+            }
+        })
     </script>
 </body>
 
