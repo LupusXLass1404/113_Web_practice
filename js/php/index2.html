@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        box {
+            color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+    <iframe name="submitFrame" style="display:none;"></iframe>
+
+    <!-- 表單 -->
+    <form action="./getData2.php" method="get" target="submitFrame">
+        <label for="animal">Animal:</label>
+        <input type="text" id="animal" name="animal"><br><br>
+
+        <label for="fruit">Fruit:</label>
+        <input type="text" id="fruit" name="fruit"><br><br>
+
+        <label for="people">People:</label>
+        <input type="text" id="people" name="people"><br><br>
+
+        <input type="submit" value="Submit">
+    </form><br><br>
+
+    <button id="btn">Get Data</button>
+    <a href="./getData2.php">getData.php</a><br><br>
+
+    <div id="box">
+        <div id="color">color</div>
+        <div id="backgroundColor">backgroundColor</div>
+        <div id="width">width</div>
+        <div id="height">height</div>
+        <div id="padding">padding</div>
+        <div id="animal">animal</div>
+        <div id="fruit">fruit</div>
+        <div id="people">people</div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            $('#btn').click(function () {
+                // console.log('btn')
+
+                let url = './getData2.php';
+                $.ajax({
+                    type: "GET",
+                    url: url,
+                    // data: "data",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response);
+
+                        $('#box').css({
+                            'color': response.color,
+                            'background-color': response.backgroundColor,
+                            'width': response.width,
+                            'height': response.height,
+                            'padding': response.padding,
+                        });
+
+                        for (const key in response) {
+                            const ele = response[key];
+                            // console.log(`${key} => ${ele}`)
+                            // console.log($(`#${key}`));
+                            $(`#${key}`).html(function (i, html) {
+                                return `${html} →《${ele}》←`;
+                            })
+                        }
+                    }
+                })
+            })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        })
+    </script>
+
+
+</body>
+
+</html>
