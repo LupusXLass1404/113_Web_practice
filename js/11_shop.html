@@ -70,9 +70,8 @@
         }
 
         .menuNum {
-            width: 40px;
+            width: 50%;
         }
-
 
         table {
             border-collapse: collapse;
@@ -125,9 +124,14 @@
             width: 100%;
             padding: 8px;
             background-color: #E95529;
+            border-radius: 4px;
             border: 0px;
             cursor: pointer;
             font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #f38564;
         }
 
         /* ============== footer ============== */
@@ -267,7 +271,7 @@
         // 產生商品列表
         function memuList() {
             const memuTitle = `<tr>
-                    <th colspan=2>商品</th>
+                    <th colspan=2 width=50%>商品</th>
                     <th>價格</th>
                     <th>數量</th>
                     <th>總計</th>
@@ -280,7 +284,7 @@
                         <td><img class="menuImg" src="${e.img}"></td>
                         <td>${e.name}<br>${e.en_name}</td>
                         <td>$${e.price}</td>
-                        <td><input class="menuNum" type="number" name="" value="0" min="0"></td>
+                        <td><input class="menuNum" type="number" name="" value="0" min="0" max="99"></td>
                         <td class="menuTotal">$0</td>
                     </tr>`;
             });
@@ -339,7 +343,7 @@
             } else {
                 console.log('12313')
                 let finalTotal = $('#finalTotal').text();
-                alert(`總共：${finalTotal}元！謝謝惠顧！`);
+                alert(`總計：${finalTotal}元！謝謝惠顧！`);
             }
         })
 
