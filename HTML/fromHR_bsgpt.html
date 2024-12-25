@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+        * {
+            font-family: "Noto Sans TC", serif;
+        }
+
+        .card_title {
+            background-color: rgb(51, 64, 139);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container my-4">
+        <form action="">
+            <div class="card shadow-lg w-75" style="margin: auto;">
+                <div class="card-header text-white card_title">
+                    <h1>工作申請表</h1>
+                    <p>HR 表單</p>
+                    <hr>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">姓名</label>
+                        <input type="text" class="form-control" name="name" id="name">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="age" class="form-label">年齡</label>
+                            <input type="number" class="form-control" name="age" id="age">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="bloodType" class="form-label">血型</label>
+                            <input type="text" class="form-control" name="bloodType" id="bloodType">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">性別</label><br>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" name="gender" value="male" id="male">
+                                <label class="form-check-label" for="male">男</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" name="gender" value="female" id="female">
+                                <label class="form-check-label" for="female">女</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" name="gender" value="other" id="other">
+                                <label class="form-check-label" for="other">其它</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">生日</label><br>
+                            <select name="birthYear" class="form-select d-inline w-auto" id="birthYear">
+                                <script>
+                                    const currentYear = new Date().getFullYear();
+                                    for (let year = currentYear; year >= 1920; year--) {
+                                        document.write(`<option value="${year}">${year}</option>`);
+                                    }
+                                </script>
+                            </select> 年
+
+                            <select name="birthMonth" class="form-select d-inline w-auto" id="birthMonth">
+                                <script>
+                                    for (let month = 1; month <= 12; month++) {
+                                        document.write(`<option value="${month}">${month}</option>`);
+                                    }
+                                </script>
+                            </select> 月
+
+                            <select name="birthDay" class="form-select d-inline w-auto" id="birthDay">
+                                <script>
+                                    for (let day = 1; day <= 31; day++) {
+                                        document.write(`<option value="${day}">${day}</option>`);
+                                    }
+                                </script>
+                            </select> 日
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">電子郵件</label>
+                        <input type="text" class="form-control" name="email" id="email"
+                            placeholder="example@example.com">
+                        <small class="form-text text-muted">example@example.com</small>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">聯絡電話</label>
+                        <input type="text" class="form-control" name="phone" id="phone">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="address" class="form-label">聯絡地址</label>
+                        <input type="text" class="form-control" name="address" id="address">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="job" class="form-label">申請職位</label>
+                        <input type="text" class="form-control" name="job" id="job">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="startDate" class="form-label">到職日期</label>
+                        <input type="date" class="form-control" name="startDate" id="startDate">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">可工作日</label><br>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" name="workDay[]" value="Monday" id="monday">
+                            <label class="form-check-label" for="monday">星期一</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" name="workDay[]" value="Tuesday"
+                                id="tuesday">
+                            <label class="form-check-label" for="tuesday">星期二</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" name="workDay[]" value="Wednesday"
+                                id="wednesday">
+                            <label class="form-check-label" for="wednesday">星期三</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" name="workDay[]" value="Thursday"
+                                id="thursday">
+                            <label class="form-check-label" for="thursday">星期四</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" name="workDay[]" value="Friday" id="friday">
+                            <label class="form-check-label" for="friday">星期五</label>
+                        </div>
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="portfolio" class="form-label">作品集</label><br>
+                        <input type="file" class="form-control" name="portfolio" id="portfolio">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="autobiography" class="form-label">自傳</label><br>
+                        <textarea class="form-control" name="autobiography" id="autobiography" rows="5"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">提交申請</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap 5 JavaScript (Optional for interactivity) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

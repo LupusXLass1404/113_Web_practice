@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .form-select option {
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="container">
+        <form action="">
+            <header>
+                <div class="header">
+                    <h1>工作申請表</h1>
+                    <p>HR 表單</p>
+                    <hr>
+                </div>
+            </header>
+            <main>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">姓名</span>
+                    <input type="text" class="form-control" placeholder="姓氏">
+                    <input type="text" class="form-control" placeholder="名字">
+                </div>
+
+                <p>
+
+                <div class="row">
+                    <div class="col input-group">
+                        <span class="input-group-text">年齡</span>
+                        <input type="text" class="form-control" placeholder="Enter email" name="email">
+                    </div>
+                    <div class="col input-group">
+                        <span class="input-group-text">血型</span>
+                        <input type="password" class="form-control" placeholder="Enter password" name="pswd">
+                    </div>
+                </div>
+                </p>
+
+                <p>
+                <div class="half-measure">
+                    <div class="row">
+                        <div class="col">
+                            性別<br>
+
+                            <input type="radio" class="form-check-input" name="gender" value="male">
+                            <label for="male">男</label>
+                            <input type="radio" class="form-check-input" name="gender" value="female">
+                            <label for="">女</label>
+                            <input type="radio" class="form-check-input" name="gender" value="other">
+                            <label for="">其它</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            生日<br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col input-group mb-4">
+                            <select class="form-select">
+                                <script>
+                                    const currentYear = new Date().getFullYear();
+                                    for (let year = currentYear; year >= 1920; year--) {
+                                        document.write(`<option value="${year}">${year}</option>`);
+                                    }
+                                </script>
+                            </select>
+                            <span class="input-group-text">年</span>
+                        </div>
+                        <div class="col input-group mb-4">
+                            <select class="form-select">
+                                <script>
+                                    for (let month = 1; month <= 12; month++) {
+                                        document.write(`<option value="${month}">${month}</option>`);
+                                    }
+                                </script>
+                            </select>
+                            <span class="input-group-text">月</span>
+                        </div>
+
+                        <div class="col input-group mb-4">
+                            <select class="form-select">
+                                <script>
+                                    for (let day = 1; day <= 31; day++) {
+                                        document.write(`<option value="${day}">${day}</option>`);
+                                    }
+                                </script>
+                            </select>
+                            <span class="input-group-text">日</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col input-group">
+                            <label for="">電子郵件</label>
+                            <div class="input-group">
+                                <span class="input-group-text">@</span>
+                                <input type="text" class="form-control" placeholder="Username">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col input-group">
+                            <span class="input-group-text">年齡</span>
+                            <input type="text" class="form-control" placeholder="Enter email" name="email">
+                        </div>
+                    </div>
+
+                    <p>
+                        <label for="">聯絡電話</label>
+                        <input type="text" name="phone">
+
+                    </p>
+                    <p>
+                        <label for="">聯絡地址</label>
+                        <input type="text" name="address">
+                    </p>
+
+                    <p>
+
+                        <label for="">申請職位</label>
+                        <input type="text" name="job">
+                    </p>
+                    <p>
+
+                        <label for="">到職日期</label><br>
+                        <input type="date" name="startDate">
+
+                    </p>
+                    <p>
+                        可工作日<br>
+                        <input type="checkbox" name="workDay[]" value="Monday">
+                        <label for="">星期一</label>
+                        <input type="checkbox" name="workDay[]" value="Tuesday">
+                        <label for="">星期二</label>
+                        <input type="checkbox" name="workDay[]" value="Wednesday">
+                        <label for="">星期三</label>
+                        <input type="checkbox" name="workDay[]" value="Thursday">
+                        <label for="">星期四</label>
+                        <input type="checkbox" name="workDay[]" value="Friday">
+                        <label for="">星期五</label>
+                    </p>
+                    <p>
+                        <label for="">作品集</label><br>
+                        <input type="file" name="portfolio">
+                    </p>
+                    <p>
+                        自傳
+                    </p>
+                    <p>
+
+                        <textarea name="autobiography" id="" style="height: 200px;"></textarea>
+                    </p>
+
+                    <p>
+                    <div>
+                        <input class="submit" type="submit" value="提交申請">
+                    </div>
+                    </p>
+            </main>
+
+    </div>
+
+
+
+
+    <!-- 姓名Name（文字）First Name Last Name
+
+        年齡Age（數字） 性別（單選）gender male female other
+        E-mail example@example.com（文字） 電話Phone Number（文字）
+        生日Birth Date（下拉）
+        地址（文字）
+
+        申請職位Applied Position（文字） 到職日Earliest Possible Start Date（日期）
+        可工作日（多選）
+
+        作品（上傳）
+        自傳（多文字） -->
+
+
+
+    </form>
+
+
+</body>
+
+</html>

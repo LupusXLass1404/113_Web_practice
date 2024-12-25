@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans TC", serif;
+    color: #ffffff;
+}
+
+body {
+    background-image: url(../image/bgc.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px 0;
+}
+
+nav a {
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #C39D62;
+    transition: 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #C39D62;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.caption-text {
+    position: absolute;
+    margin-bottom: 20vw;
+}
+
+.bg_1 {
+    background-color: rgba(11, 22, 26, 0.9);
+}
+
+.bg_2 {
+    background-color: rgba(20, 30, 32, 0.9);
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+#menu ul {
+    font-size: 20px;
+    list-style: none;
+}
+
+#menu ul li {
+    font-size: 20px;
+    padding: 16px 0;
+}
+
+#menu ul li .price {
+    color: #C39D62;
+    position: relative;
+    float: right;
+}
+
+#menu ul li .price::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+
+    right: 110%;
+    width: 200px;
+    height: 1px;
+    background-color: #C39D62;
+    /* color: #C39D62; */
+}
+
+#menu ul li .depiction {
+    font-size: 16px;
+    color: #9D9FA6;
+}
+
+#contact {
+    background-color: #22222271;
+
+}
+
+#contact .card {
+    max-width: 766px;
+    margin: auto;
+    padding: 24px;
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ff6347;
+}
