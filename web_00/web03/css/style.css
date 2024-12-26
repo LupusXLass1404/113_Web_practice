@@ -2,59 +2,52 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: 標楷體;
-}
-
-body {
-    height: 100vh;
-    padding: 24px;
-}
-
-ul {
+    font-family: '標楷體', sans-serif;
     list-style: none;
 }
 
-/* 外框 */
-.wrapper {
+.box {
     width: 1024px;
     height: 768px;
     margin: auto;
 }
 
-/* 通用 */
+/* border */
 header,
-footer,
 .aside-header,
 .aside-footer,
 .main-header,
-.main-footer {
+.main-footer,
+footer {
     border: 1px solid #000;
 }
 
-/* ====================== 頁首 ====================== */
+
+/* header */
 header {
     width: 100%;
     height: 65px;
     display: flex;
+    border-bottom: 0;
+    display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 0;
 }
 
-header img {
+header .logo {
     width: 994px;
     height: 60px;
 }
 
-/* ====================== 容器 ====================== */
-.wrapper .container {
+/* container */
+.container {
     width: 100%;
     height: calc(100% - 65px - 20px);
     display: flex;
 }
 
-/* 容器左邊 */
-aside {
+/* left */
+.container-left {
     width: 215px;
     height: 100%;
 }
@@ -62,53 +55,46 @@ aside {
 .aside-header {
     width: 100%;
     height: calc(100% - 25px);
-    border-bottom: 0;
     border-right: 0;
+    border-bottom: 0;
     text-align: center;
 }
 
-.aside-header h1 {
-    color: #f0f;
+.menu-title {
     border-bottom: 1px solid #000;
+    color: #f0f;
     font-size: 24px;
     font-weight: 500;
-    padding-bottom: 4px;
-    margin: 8px;
-    display: inline-block;
+    padding: 8px;
 }
 
 .aside-header ul {
+    padding: 16px 8px;
     font-size: 16px;
 }
 
-.aside-header li {
+.aside-header ul li {
     width: 200px;
     height: 35px;
     line-height: 35px;
-    margin: 8px auto;
     background-image: url(../images/menu1.png);
+    margin-bottom: 8px;
 }
 
-.aside-header li:hover {
+.aside-header ul li:hover {
     background-image: url(../images/menu2.png);
-}
-
-.aside-header li a {
-    width: 100%;
-    height: 100%;
-    display: block;
 }
 
 .aside-footer {
     width: 100%;
     height: 25px;
-    border-bottom: 0;
     border-right: 0;
-
+    text-align: center;
+    font-size: 16px;
 }
 
-/* 容器右邊 */
-main {
+/* right */
+.container-right {
     width: calc(100% - 215px);
     height: 100%;
 }
@@ -117,19 +103,19 @@ main {
     width: 100%;
     height: 29px;
     border-bottom: 0;
+
 }
 
 .main-header marquee {
     width: 770px;
     height: 29px;
-    color: #00f;
     font-size: 24px;
+    color: #00f;
 }
 
 .main-footer {
     width: 100%;
     height: calc(100% - 29px);
-    border-bottom: 0;
 }
 
 .main-footer iframe {
@@ -137,128 +123,113 @@ main {
     height: 100%;
 }
 
-
-/* ====================== 頁尾 ====================== */
+/* footer */
 footer {
     width: 100%;
     height: 20px;
+    border-top: 0;
 }
 
-footer p {
-    font-size: 16px;
-    text-align: center;
-}
-
-/* ====================== 其它分頁 ====================== */
-/* 共用 */
-.bg {
+/* page */
+.page-background {
     background-image: url(../images/0101.jpg);
-}
-
-.container p {
-    white-space: pre-line;
-}
-
-/* 導航 */
-nav {
-    text-align: center;
-}
-
-nav h2,
-nav ul {
-    margin-bottom: 24px;
-}
-
-nav h2 {
-    font-size: 18px;
-}
-
-#history nav h2,
-#event nav h2 {
-    color: #f00;
-}
-
-#learning nav h2 {
-    color: #0ff;
-}
-
-nav ul {
-    display: flex;
-    justify-content: space-evenly;
+    padding: 16px;
 }
 
 /* main */
-#main {
+#main-container {
     text-align: center;
-}
-
-#main img {
-    margin-bottom: 24px;
-}
-
-#main p {
     color: #00f;
     font-size: 24px;
     font-style: italic;
-    font-weight: bold;
 }
 
-/* history */
-#history p {
-    font: 16px;
-    color: #f00;
+#main-container img {
+    width: 250px;
+    height: 250px;
 }
 
-/* event */
-#event table {
-    width: 100%;
-    margin-bottom: 24px;
-}
-
-#event table tr td {
-    white-space: pre-line;
-}
-
-#event .links {
+/* nav */
+.common-nav {
     text-align: center;
 }
 
-
-#s0 {
-    color: #800000;
+.common-nav h2 {
+    font-size: 18px;
+    margin-bottom: 16px;
 }
 
-#s1 {
-    color: #00f;
+.common-nav ul {
+    display: flex;
+    justify-content: space-around;
 }
 
-#s2 {
+#history-container .common-nav h2,
+#event-container .common-nav h2 {
     color: #f00;
 }
 
-#s3 {
+#learning-container .common-nav h2 {
+    color: #0ff;
+}
+
+/* history */
+#history-container p {
+    color: #f00;
+    font-size: 16px;
+    white-space: pre-line;
+}
+
+/* event */
+#event-container p {
+    color: #f00;
+    font-size: 16px;
+    white-space: pre-line;
+}
+
+#event-container ul {
+    margin: 24px 0;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+#event-container table tr td {
+    white-space: pre-line;
+}
+
+#event-0 {
+    color: #800000;
+}
+
+#event-1 {
+    color: #00f;
+}
+
+#event-2 {
+    color: #f00;
+}
+
+#event-3 {
     color: #0f0;
 }
 
-#s4 {
-    color: #000;
+#event-4 {
+    color: 000;
 }
 
+
 /* learning */
-#learning .items {
+#learning-container main {
     height: 80vh;
     color: #00f;
-    text-decoration: underline;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+
 }
 
-#learning .item {
-    cursor: pointer;
-}
-
-#learning .item:hover {
-    background-color: rgba(30, 143, 255, 0.5);
+#learning-container .item:hover {
+    background-color: lightblue;
 }
