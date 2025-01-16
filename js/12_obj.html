@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #list td {
+            padding: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        本金：<input type="number" id="num" min="0"> ｜ 利率：<input type="number" id="rate" min="0"> ｜ 年份：<input type="number"
+            id="year" min="0"> ｜ <button onclick="change()">計算</button>
+    </div>
+    <br>
+    <table border=1>
+        <tr id="list">
+
+        </tr>
+    </table>
+
+    <script>
+        let obj = {
+            s1: 'cat',
+            s2: 'dog',
+            s3: 'amy',
+            sayHello: function () {
+                console.log('Hello');
+            },
+            sayAny: function (any) {
+                console.log(any);
+            },
+            sayThis: function (any) {
+                console.log('this', this);
+                console.log(this[any]);
+            },
+            sayS1: () => {
+                console.log('this', this);
+                console.log('this.s2', this.s2);
+
+            }
+        }
+        // obj.sayThis('s2');
+        // obj.sayS1();
+
+
+        let num = 10;
+        let year = 10;
+        let rate = 0.05;
+        function cale() {
+            let tmp = Number(num);
+            let numlist = [];
+            console.log('tmp', tmp);
+            console.log('numlist', numlist);
+
+            for (i = 0; i < year; i++) {
+                numlist.push(tmp);
+                console.log("num", num, ", tmp", tmp, ", rate", rate, ", tmp * rate", tmp * rate);
+                tmp += tmp * rate;
+                console.log("tmp", tmp, ", rate", rate, ", tmp ++", tmp * rate);
+            }
+
+            let makeList = "";
+            numlist.forEach(e => {
+                // console.log(e);
+                makeList += `<td>${e.toFixed(2)}</td>`;
+            });
+
+            document.getElementById('list').innerHTML = makeList;
+        }
+        // console.log(numlist);
+
+
+        function change() {
+            const numId = document.getElementById('num');
+            const rateId = document.getElementById('rate');
+            const yearId = document.getElementById('year');
+            if (numId.value) {
+                num = numId.value;
+                // console.log(numId.value);
+            }
+            if (rateId.value) {
+                rate = rateId.value;
+                // console.log(rateId.value);
+            }
+            if (yearId.value) {
+                year = yearId.value;
+            }
+            cale();
+        }
+        cale();
+    </script>
+</body>
+
+</html>

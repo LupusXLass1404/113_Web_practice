@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Itim&family=Noto+Sans+TC:wght@100..900&display=swap');
 
 * {
     box-sizing: border-box;
@@ -62,7 +62,7 @@ nav a:hover::after {
 }
 
 .bg_1 {
-    background-color: rgba(11, 22, 26, 0.9);
+    background-color: #0B161A;
 }
 
 .bg_2 {
@@ -81,7 +81,7 @@ nav a:hover::after {
 
 #menu ul li {
     font-size: 20px;
-    padding: 16px 0;
+    padding-bottom: 16px;
 }
 
 #menu ul li .price {
@@ -94,7 +94,6 @@ nav a:hover::after {
     content: '';
     position: absolute;
     top: 50%;
-
     right: 110%;
     width: 200px;
     height: 1px;
@@ -131,5 +130,111 @@ footer a {
 }
 
 footer a:hover {
-    color: #ff6347;
+    color: #C39D62;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 0px;
+    border-color: #141E20;
+    background-color: #141E20;
+}
+
+.card-body {
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.card-body h3 {
+    /* font-style: italic; */
+    font-family: "Dancing Script", serif;
+}
+
+.card-body h5 {
+    font-weight: 400;
+    color: #9D9FA6;
+    padding: 20px;
+    line-height: 1.5;
+}
+
+.card-img-full {
+    object-fit: cover;
+    height: 100%;
+    border-radius: 0px;
+}
+
+.botton {
+    display: inline;
+    padding: 12px 32px;
+    background-color: #C39D62;
+    cursor: pointer;
+}
+
+#menu .botton {
+    margin-left: 40px;
+}
+
+#contact h2 {
+    color: #fff;
+    text-align: center;
+}
+
+#contact .card {
+    background-color: #0B161A;
+}
+
+#contact form {
+    text-align: center;
+}
+
+.fab {
+    font-size: 32px;
+    margin: 0 20px;
+}
+
+.fab:hover {
+    color: #C39D62;
+}
+
+.form-control {
+    border-radius: 0;
+    border: 1px solid #141E21;
+    background-color: #141E21;
+    color: white;
+    height: 60px;
+}
+
+.form-control.textarea {
+    height: 150px;
+    border: #C39D62;
+}
+
+
+.form-control:focus {
+    background-color: #141E21;
+    color: white;
+    box-shadow: none;
+    border-color: #C39D62;
+}
+
+.form-control.textarea {
+    height: 150px;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.39);
+}
+
+#moreMenu {
+    display: none;
+    overflow: hidden;
+    height: 0;
+    transition: height 0.5s ease-out;
+}
+
+a {
+    text-decoration: none;
 }
