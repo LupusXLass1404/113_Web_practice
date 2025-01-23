@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #list td {
+        table * {
+            text-align: center;
             padding: 4px;
         }
     </style>
@@ -14,11 +15,13 @@
 
 <body>
     <div>
-        本金：<input type="number" id="num" min="0"> ｜ 利率：<input type="number" id="rate" min="0"> ｜ 年份：<input type="number"
-            id="year" min="0"> ｜ <button onclick="change()">計算</button>
+        本金：<input type="number" id="num" min="0" step="10" value="10"> ｜ 利率：<input type="number" id="rate" min="0"
+            step="0.01" value="0.05"> ｜
+        年份：<input type="number" id="year" min="0" value="10"> ｜ <button onclick="change()">計算</button>
     </div>
     <br>
     <table border=1>
+        <tr id="yearList"></tr>
         <tr id="list">
 
         </tr>
@@ -65,12 +68,15 @@
                 console.log("tmp", tmp, ", rate", rate, ", tmp ++", tmp * rate);
             }
 
+            let yearList = ""
             let makeList = "";
-            numlist.forEach(e => {
+            numlist.forEach((e, index) => {
                 // console.log(e);
+                yearList += `<td>${index + 1} 年</td>`;
                 makeList += `<td>${e.toFixed(2)}</td>`;
             });
 
+            document.getElementById('yearList').innerHTML = yearList;
             document.getElementById('list').innerHTML = makeList;
         }
         // console.log(numlist);
