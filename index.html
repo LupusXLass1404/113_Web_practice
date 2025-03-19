@@ -11,6 +11,46 @@
     <p>
         Hello, World!
     </p>
+    <div id="link">
+
+    </div>
 </body>
+<script>
+    const linkId = document.getElementById('link');
+    const link = [
+        {
+            text: 'food',
+            link: './HTML/food/'
+        },
+        {
+            text: 'menu',
+            link: './HTML/menu/'
+        },
+        {
+            text: 'color-box',
+            link: './HTML/flex-box.html'
+        },
+        {
+            text: 'login',
+            link: './HTML/login.html'
+        },
+        {
+            text: 'position',
+            link: './HTML/position.html'
+        },
+        {
+            text: 'robot',
+            link: './HTML/robot.html'
+        },
+    ]
+    let tmp = '';
+    link.forEach(e => {
+        tmp += `<p>
+                    <a href="${e.link}">${e.text}</a>
+                </p>`;
+    });
+
+    linkId.innerHTML = tmp;
+</script>
 
 </html>
