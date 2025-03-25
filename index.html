@@ -16,7 +16,25 @@
     </div>
 </body>
 <script>
+    // ====================== function ======================
+    function init() {
+        generate_link()
+    }
+
+    function generate_link() {
+        let tmp = '';
+        link.forEach(e => {
+            tmp += `<p>
+                        <a href="${e.link}">${e.text}</a>
+                    </p>`;
+        });
+
+        linkId.innerHTML = tmp;
+    }
+
+    // ====================== declaration ======================
     const linkId = document.getElementById('link');
+
     const link = [
         {
             text: 'food',
@@ -43,14 +61,10 @@
             link: './HTML/robot.html'
         },
     ]
-    let tmp = '';
-    link.forEach(e => {
-        tmp += `<p>
-                    <a href="${e.link}">${e.text}</a>
-                </p>`;
-    });
 
-    linkId.innerHTML = tmp;
+    // ====================== binding ======================
+    document.addEventListener('DOMContentLoaded', init);
+
 </script>
 
 </html>
