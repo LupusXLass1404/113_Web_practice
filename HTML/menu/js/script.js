@@ -28,7 +28,7 @@ function itemsPrint(title, itemsType) {
         // console.log(ele);
         itemsInfo += `
         <div class="item" data-item="${ele.name}">
-            <div class="img" style="background-image: url(./images/${ele.name}.jpg)";></div>
+            <div class="img" style="background-image: url(./images/${ele.name}.webp)";></div>
             <div class="info">
                 <p>
                     <label class="name" for="">${ele.name}</label>
@@ -68,7 +68,7 @@ function orderOptions(item) {
     let ele = items.find(i => i.name === chooseItem);
     let itemInfo = `
         <div>
-            <div class="img optionImg" style="background-image: url(./images/${ele.name}.jpg)";></div>
+            <div class="img optionImg" style="background-image: url(./images/${ele.name}.webp)";></div>
             <div class="info">
                 <p class="name">
                     ${ele.name}

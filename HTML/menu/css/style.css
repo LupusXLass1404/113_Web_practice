@@ -202,7 +202,7 @@ input[type="radio"] {
 
 /* 按鈕 */
 .button {
-    background-color: #b6e887;
+    background-color: #b3c8ac;
     border-radius: 8px;
     font-size: 1.2rem;
     font-weight: bold;
@@ -220,13 +220,13 @@ input[type="radio"] {
 }
 
 .button:hover {
-    background-color: #a3db73;
+    background-color: #b2d4a5;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transform: scale(1.05);
 }
 
 .button:active {
-    background-color: #90c961;
+    background-color: rgb(135, 198, 84);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transform: scale(0.95);
 }
