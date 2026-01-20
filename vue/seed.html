@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="app">
+        <div>農田</div>
+        <div id="phaseDisplay">乾燥</div>
+        <div v-if="currentPhase === false">
+            <button @click="seed()">撒下種子</button>
+        </div>
+        <div v-if="currentPhase === phase.length - 1">
+            <button @click="harvest()">收割作物</button>
+        </div>
+    </div>
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid black;"></canvas>
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        // 畫布
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+        function drawFarmland() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+        ctx.fillStyle = "red";
+        ctx.fillRect(0, 0, 64, 64);
+
+        // vue
+        const app = Vue.createApp({
+            data() {
+                return {
+                    phase: ['種子', '幼苗', '成長', '開花', '結果'],
+                    currentPhase: false,
+                    growTime: 20,
+                    sowTime: 0,
+                }
+            },
+            methods: {
+                seed() {
+                    this.sowTime = Date.now();
+                    this.currentPhase = 0;
+                    this.updatePhase();
+                },
+                updatePhase() {
+                    document.getElementById('phaseDisplay').innerText = '目前階段: ' + this.phase[this.currentPhase];
+                },
+                checkGrowth() {
+                    // 過去多久時間
+                    const elapsed = Date.now() - this.sowTime;
+
+                    // 算出每個階段的時間（毫秒）
+                    const phaseLength = this.growTime * 1000 / this.phase.length;
+
+                    // 算出過了幾個階段
+                    if (this.currentPhase < this.phase.length - 1) {
+                        const nextPhase = Math.floor(elapsed / phaseLength);
+                        console.log(nextPhase);
+                        this.currentPhase = Math.min(nextPhase, this.phase.length - 1);
+                    }
+
+                    this.updatePhase();
+                },
+                harvest() {
+                    this.currentPhase = false;
+                    this.updatePhase();
+                }
+            },
+            mounted() {
+                this.timer = setInterval(() => {
+                    if (this.currentPhase !== false) {
+                        this.checkGrowth();
+                    }
+                }, 1000);
+            },
+        });
+
+        app.mount('#app');
+    </script>
+</body>
+
+</html>
